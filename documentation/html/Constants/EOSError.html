@@ -1,0 +1,2623 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>EOSError Constants Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">EOSFramework </a></h1>
+				<a id="developerHome" href="../index.html">Henry Betts</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">EOSError Constants Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="EOSError Constants Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">EOSError Constants Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">EOSError.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					
+                    
+                    
+                    <h3 class="subsubtitle method-title">EOSError</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>EOSError codes</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_OPTIONS(NSUInteger, EOSError ) {<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_OK</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Unimplemented</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InternalError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_MemoryAllocationFailed</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_MemoryFreeFailed</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_OperationCancelled</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_IncompatibleVersion</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_NotSupported</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_UnexpectedException</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_ProtectionViolation</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_MissingSubcomponent</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_SelectionUnavailable</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_IOError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_TooManyOpen</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_NotFound</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_OpenError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_CloseError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_SeekError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_TellError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_ReadError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_WriteError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_PermissionError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_DiskFull</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_AlreadyExists</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_FormatUnrecognized</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_DataCorrupt</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_File_FileNamingError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Directory_NotFound</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Directory_IOError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Directory_ChildNotFound</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Directory_ContainsChild</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Directory_Full</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Property_Unavailable</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Property_Mismatch</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Property_NotLoaded</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidParameter</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidHandle</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidPointer</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidIndex</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidLength</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidFunctionPointer</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidSortFunction</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_NotFound</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_Busy</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_Invalid</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_Emergency</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_MemoryFull</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_InternalError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_InvalidParameter</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_NoDisk</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_DiskError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_CFGateChanged</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_DialChanged</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_NotInstalled</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_StayAwake</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_NotReleased</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_IOError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_NotOpen</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_AlreadyOpen</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_OpenError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_CloseError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_SeekError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_TellError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_ReadError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_WriteError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_PermissionError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_CouldNotBeginThread</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_BadOptions</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Stream_EndOfStream</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_COMM_PortInUse</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_COMM_Disconnected</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_COMM_DeviceIncompatible</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_COMM_BufferFull</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_COMM_USBError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_LockError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Device_UnlockError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_STI_Unknown</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_STI_InternalError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_STI_DeviceCreationError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_STI_DeviceReleaseError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_STI_DeviceNotLaunched</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_EnumerationFailed</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidFunctionCall</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_HandleNotFound</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_InvalidID</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_Timeout</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_SessionNotOpen</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidTransactionID</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_IncompleteTransfer</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidStorageID</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_UnsupportedProperty</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidObjectFormatCode</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_SelfTestFailed</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_PartialDeletion</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_UnsupportedFormatSpecification</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidObjectInfo</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidCodeFormat</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_UnknownVendorCode</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_CaptureAlreadyTerminated</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidParentObject</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidPropertyFormat</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_InvalidPropertyValue</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_SessionAlreadyOpen</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_TransactionCancelled</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_UnsupportedDestinationSpecification</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_LegacyCamera</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_UnknownCommand</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_OperationRefused</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_LensCoverClosed</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_LowBattery</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_ObjectNotReady</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_CannotMakeObject</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_PTP_MemoryStatusNotReady</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_AF</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_Reserved</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_MirrorUp</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_SensorCleaning</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_Silence</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_NoCard</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_WriteError</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_CardProtected</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_MovieCrop</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_StrobeCharge</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_NoLens</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_SpecialMovieMode</a> = ,<br/>
+                            
+                            &nbsp;&nbsp; <a href="">EOSError_TakePicture_LVError</a> = ,<br/>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="EOSError_OK"></a><code>EOSError_OK</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Unimplemented"></a><code>EOSError_Unimplemented</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InternalError"></a><code>EOSError_InternalError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_MemoryAllocationFailed"></a><code>EOSError_MemoryAllocationFailed</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_MemoryFreeFailed"></a><code>EOSError_MemoryFreeFailed</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_OperationCancelled"></a><code>EOSError_OperationCancelled</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_IncompatibleVersion"></a><code>EOSError_IncompatibleVersion</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_NotSupported"></a><code>EOSError_NotSupported</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_UnexpectedException"></a><code>EOSError_UnexpectedException</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_ProtectionViolation"></a><code>EOSError_ProtectionViolation</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_MissingSubcomponent"></a><code>EOSError_MissingSubcomponent</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_SelectionUnavailable"></a><code>EOSError_SelectionUnavailable</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_IOError"></a><code>EOSError_File_IOError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_TooManyOpen"></a><code>EOSError_File_TooManyOpen</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_NotFound"></a><code>EOSError_File_NotFound</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_OpenError"></a><code>EOSError_File_OpenError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_CloseError"></a><code>EOSError_File_CloseError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_SeekError"></a><code>EOSError_File_SeekError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_TellError"></a><code>EOSError_File_TellError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_ReadError"></a><code>EOSError_File_ReadError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_WriteError"></a><code>EOSError_File_WriteError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_PermissionError"></a><code>EOSError_File_PermissionError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_DiskFull"></a><code>EOSError_File_DiskFull</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_AlreadyExists"></a><code>EOSError_File_AlreadyExists</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_FormatUnrecognized"></a><code>EOSError_File_FormatUnrecognized</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_DataCorrupt"></a><code>EOSError_File_DataCorrupt</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_File_FileNamingError"></a><code>EOSError_File_FileNamingError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Directory_NotFound"></a><code>EOSError_Directory_NotFound</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Directory_IOError"></a><code>EOSError_Directory_IOError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Directory_ChildNotFound"></a><code>EOSError_Directory_ChildNotFound</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Directory_ContainsChild"></a><code>EOSError_Directory_ContainsChild</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Directory_Full"></a><code>EOSError_Directory_Full</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Property_Unavailable"></a><code>EOSError_Property_Unavailable</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Property_Mismatch"></a><code>EOSError_Property_Mismatch</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Property_NotLoaded"></a><code>EOSError_Property_NotLoaded</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidParameter"></a><code>EOSError_InvalidParameter</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidHandle"></a><code>EOSError_InvalidHandle</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidPointer"></a><code>EOSError_InvalidPointer</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidIndex"></a><code>EOSError_InvalidIndex</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidLength"></a><code>EOSError_InvalidLength</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidFunctionPointer"></a><code>EOSError_InvalidFunctionPointer</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidSortFunction"></a><code>EOSError_InvalidSortFunction</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_NotFound"></a><code>EOSError_Device_NotFound</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_Busy"></a><code>EOSError_Device_Busy</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_Invalid"></a><code>EOSError_Device_Invalid</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_Emergency"></a><code>EOSError_Device_Emergency</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_MemoryFull"></a><code>EOSError_Device_MemoryFull</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_InternalError"></a><code>EOSError_Device_InternalError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_InvalidParameter"></a><code>EOSError_Device_InvalidParameter</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_NoDisk"></a><code>EOSError_Device_NoDisk</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_DiskError"></a><code>EOSError_Device_DiskError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_CFGateChanged"></a><code>EOSError_Device_CFGateChanged</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_DialChanged"></a><code>EOSError_Device_DialChanged</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_NotInstalled"></a><code>EOSError_Device_NotInstalled</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_StayAwake"></a><code>EOSError_Device_StayAwake</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_NotReleased"></a><code>EOSError_Device_NotReleased</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_IOError"></a><code>EOSError_Stream_IOError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_NotOpen"></a><code>EOSError_Stream_NotOpen</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_AlreadyOpen"></a><code>EOSError_Stream_AlreadyOpen</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_OpenError"></a><code>EOSError_Stream_OpenError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_CloseError"></a><code>EOSError_Stream_CloseError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_SeekError"></a><code>EOSError_Stream_SeekError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_TellError"></a><code>EOSError_Stream_TellError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_ReadError"></a><code>EOSError_Stream_ReadError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_WriteError"></a><code>EOSError_Stream_WriteError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_PermissionError"></a><code>EOSError_Stream_PermissionError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_CouldNotBeginThread"></a><code>EOSError_Stream_CouldNotBeginThread</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_BadOptions"></a><code>EOSError_Stream_BadOptions</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Stream_EndOfStream"></a><code>EOSError_Stream_EndOfStream</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_COMM_PortInUse"></a><code>EOSError_COMM_PortInUse</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_COMM_Disconnected"></a><code>EOSError_COMM_Disconnected</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_COMM_DeviceIncompatible"></a><code>EOSError_COMM_DeviceIncompatible</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_COMM_BufferFull"></a><code>EOSError_COMM_BufferFull</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_COMM_USBError"></a><code>EOSError_COMM_USBError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_LockError"></a><code>EOSError_Device_LockError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Device_UnlockError"></a><code>EOSError_Device_UnlockError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_STI_Unknown"></a><code>EOSError_STI_Unknown</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_STI_InternalError"></a><code>EOSError_STI_InternalError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_STI_DeviceCreationError"></a><code>EOSError_STI_DeviceCreationError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_STI_DeviceReleaseError"></a><code>EOSError_STI_DeviceReleaseError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_STI_DeviceNotLaunched"></a><code>EOSError_STI_DeviceNotLaunched</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_EnumerationFailed"></a><code>EOSError_EnumerationFailed</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidFunctionCall"></a><code>EOSError_InvalidFunctionCall</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_HandleNotFound"></a><code>EOSError_HandleNotFound</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_InvalidID"></a><code>EOSError_InvalidID</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_Timeout"></a><code>EOSError_Timeout</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_SessionNotOpen"></a><code>EOSError_PTP_SessionNotOpen</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidTransactionID"></a><code>EOSError_PTP_InvalidTransactionID</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_IncompleteTransfer"></a><code>EOSError_PTP_IncompleteTransfer</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidStorageID"></a><code>EOSError_PTP_InvalidStorageID</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_UnsupportedProperty"></a><code>EOSError_PTP_UnsupportedProperty</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidObjectFormatCode"></a><code>EOSError_PTP_InvalidObjectFormatCode</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_SelfTestFailed"></a><code>EOSError_PTP_SelfTestFailed</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_PartialDeletion"></a><code>EOSError_PTP_PartialDeletion</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_UnsupportedFormatSpecification"></a><code>EOSError_PTP_UnsupportedFormatSpecification</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidObjectInfo"></a><code>EOSError_PTP_InvalidObjectInfo</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidCodeFormat"></a><code>EOSError_PTP_InvalidCodeFormat</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_UnknownVendorCode"></a><code>EOSError_PTP_UnknownVendorCode</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_CaptureAlreadyTerminated"></a><code>EOSError_PTP_CaptureAlreadyTerminated</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidParentObject"></a><code>EOSError_PTP_InvalidParentObject</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidPropertyFormat"></a><code>EOSError_PTP_InvalidPropertyFormat</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_InvalidPropertyValue"></a><code>EOSError_PTP_InvalidPropertyValue</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_SessionAlreadyOpen"></a><code>EOSError_PTP_SessionAlreadyOpen</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_TransactionCancelled"></a><code>EOSError_PTP_TransactionCancelled</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_UnsupportedDestinationSpecification"></a><code>EOSError_PTP_UnsupportedDestinationSpecification</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_LegacyCamera"></a><code>EOSError_PTP_LegacyCamera</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_UnknownCommand"></a><code>EOSError_PTP_UnknownCommand</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_OperationRefused"></a><code>EOSError_PTP_OperationRefused</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_LensCoverClosed"></a><code>EOSError_PTP_LensCoverClosed</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_LowBattery"></a><code>EOSError_PTP_LowBattery</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_ObjectNotReady"></a><code>EOSError_PTP_ObjectNotReady</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_CannotMakeObject"></a><code>EOSError_PTP_CannotMakeObject</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_PTP_MemoryStatusNotReady"></a><code>EOSError_PTP_MemoryStatusNotReady</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_AF"></a><code>EOSError_TakePicture_AF</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_Reserved"></a><code>EOSError_TakePicture_Reserved</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_MirrorUp"></a><code>EOSError_TakePicture_MirrorUp</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_SensorCleaning"></a><code>EOSError_TakePicture_SensorCleaning</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_Silence"></a><code>EOSError_TakePicture_Silence</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_NoCard"></a><code>EOSError_TakePicture_NoCard</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_WriteError"></a><code>EOSError_TakePicture_WriteError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_CardProtected"></a><code>EOSError_TakePicture_CardProtected</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_MovieCrop"></a><code>EOSError_TakePicture_MovieCrop</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_StrobeCharge"></a><code>EOSError_TakePicture_StrobeCharge</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_NoLens"></a><code>EOSError_TakePicture_NoLens</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_SpecialMovieMode"></a><code>EOSError_TakePicture_SpecialMovieMode</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="EOSError_TakePicture_LVError"></a><code>EOSError_TakePicture_LVError</code></dt>
+<dd>
+
+
+<p>EOSError codes</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">EOSError.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <code class="declared-in-ref">EOSError.h</code><br />
+                    </div>				
+                    
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 Henry Betts. All rights reserved. (Last updated: 2014-11-03)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

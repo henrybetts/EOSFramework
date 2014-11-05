@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		BA75B2A119F4A35B00010EB9 /* EOSFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2A019F4A35B00010EB9 /* EOSFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA75B2AB19F4A35B00010EB9 /* EOSFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2AA19F4A35B00010EB9 /* EOSFrameworkTests.m */; };
+		BA75B2C419F4A41000010EB9 /* EOSFile.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2B419F4A41000010EB9 /* EOSFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2C519F4A41000010EB9 /* EOSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2B519F4A41000010EB9 /* EOSObject.m */; };
+		BA75B2C619F4A41000010EB9 /* EOSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2B619F4A41000010EB9 /* EOSManager.m */; };
+		BA75B2C719F4A41000010EB9 /* EOSManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2B719F4A41000010EB9 /* EOSManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2C819F4A41000010EB9 /* EOSError.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2B819F4A41000010EB9 /* EOSError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2C919F4A41000010EB9 /* EOSObject.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2B919F4A41000010EB9 /* EOSObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2CA19F4A41000010EB9 /* EOSCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2BA19F4A41000010EB9 /* EOSCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2CB19F4A41000010EB9 /* EOSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2BB19F4A41000010EB9 /* EOSFile.m */; };
+		BA75B2CC19F4A41000010EB9 /* EOSVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2BC19F4A41000010EB9 /* EOSVolume.m */; };
+		BA75B2CD19F4A41000010EB9 /* EOSVolume.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2BD19F4A41000010EB9 /* EOSVolume.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2CE19F4A41000010EB9 /* EOSError.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2BE19F4A41000010EB9 /* EOSError.m */; };
+		BA75B2CF19F4A41000010EB9 /* EOSPropertyObject.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2BF19F4A41000010EB9 /* EOSPropertyObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2D019F4A41000010EB9 /* EOSPropertyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2C019F4A41000010EB9 /* EOSPropertyObject.m */; };
+		BA75B2D119F4A41000010EB9 /* EOSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2C119F4A41000010EB9 /* EOSImage.m */; };
+		BA75B2D219F4A41000010EB9 /* EOSImage.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2C219F4A41000010EB9 /* EOSImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA75B2D319F4A41000010EB9 /* EOSCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2C319F4A41000010EB9 /* EOSCamera.m */; };
+		BA75B2D519F4A60400010EB9 /* EDSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA75B2D419F4A60300010EB9 /* EDSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +35,23 @@
 		BA75B2A619F4A35B00010EB9 /* EOSFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EOSFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA75B2A919F4A35B00010EB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA75B2AA19F4A35B00010EB9 /* EOSFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOSFrameworkTests.m; sourceTree = "<group>"; };
+		BA75B2B419F4A41000010EB9 /* EOSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSFile.h; sourceTree = "<group>"; };
+		BA75B2B519F4A41000010EB9 /* EOSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSObject.m; sourceTree = "<group>"; };
+		BA75B2B619F4A41000010EB9 /* EOSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSManager.m; sourceTree = "<group>"; };
+		BA75B2B719F4A41000010EB9 /* EOSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSManager.h; sourceTree = "<group>"; };
+		BA75B2B819F4A41000010EB9 /* EOSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSError.h; sourceTree = "<group>"; };
+		BA75B2B919F4A41000010EB9 /* EOSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSObject.h; sourceTree = "<group>"; };
+		BA75B2BA19F4A41000010EB9 /* EOSCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSCamera.h; sourceTree = "<group>"; };
+		BA75B2BB19F4A41000010EB9 /* EOSFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSFile.m; sourceTree = "<group>"; };
+		BA75B2BC19F4A41000010EB9 /* EOSVolume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSVolume.m; sourceTree = "<group>"; };
+		BA75B2BD19F4A41000010EB9 /* EOSVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSVolume.h; sourceTree = "<group>"; };
+		BA75B2BE19F4A41000010EB9 /* EOSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSError.m; sourceTree = "<group>"; };
+		BA75B2BF19F4A41000010EB9 /* EOSPropertyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSPropertyObject.h; sourceTree = "<group>"; };
+		BA75B2C019F4A41000010EB9 /* EOSPropertyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSPropertyObject.m; sourceTree = "<group>"; };
+		BA75B2C119F4A41000010EB9 /* EOSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSImage.m; sourceTree = "<group>"; };
+		BA75B2C219F4A41000010EB9 /* EOSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSImage.h; sourceTree = "<group>"; };
+		BA75B2C319F4A41000010EB9 /* EOSCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSCamera.m; sourceTree = "<group>"; };
+		BA75B2D419F4A60300010EB9 /* EDSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EDSDK.framework; path = ../EDSDK/EDSDK_64/EDSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA75B2D519F4A60400010EB9 /* EDSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +79,7 @@
 				BA75B29D19F4A35B00010EB9 /* EOSFramework */,
 				BA75B2A719F4A35B00010EB9 /* EOSFrameworkTests */,
 				BA75B29C19F4A35B00010EB9 /* Products */,
+				BA75B2D419F4A60300010EB9 /* EDSDK.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +96,22 @@
 			isa = PBXGroup;
 			children = (
 				BA75B2A019F4A35B00010EB9 /* EOSFramework.h */,
+				BA75B2B719F4A41000010EB9 /* EOSManager.h */,
+				BA75B2B619F4A41000010EB9 /* EOSManager.m */,
+				BA75B2B819F4A41000010EB9 /* EOSError.h */,
+				BA75B2BE19F4A41000010EB9 /* EOSError.m */,
+				BA75B2B919F4A41000010EB9 /* EOSObject.h */,
+				BA75B2B519F4A41000010EB9 /* EOSObject.m */,
+				BA75B2BF19F4A41000010EB9 /* EOSPropertyObject.h */,
+				BA75B2C019F4A41000010EB9 /* EOSPropertyObject.m */,
+				BA75B2BA19F4A41000010EB9 /* EOSCamera.h */,
+				BA75B2C319F4A41000010EB9 /* EOSCamera.m */,
+				BA75B2B419F4A41000010EB9 /* EOSFile.h */,
+				BA75B2BB19F4A41000010EB9 /* EOSFile.m */,
+				BA75B2BD19F4A41000010EB9 /* EOSVolume.h */,
+				BA75B2BC19F4A41000010EB9 /* EOSVolume.m */,
+				BA75B2C219F4A41000010EB9 /* EOSImage.h */,
+				BA75B2C119F4A41000010EB9 /* EOSImage.m */,
 				BA75B29E19F4A35B00010EB9 /* Supporting Files */,
 			);
 			path = EOSFramework;
@@ -97,7 +149,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA75B2D219F4A41000010EB9 /* EOSImage.h in Headers */,
+				BA75B2C419F4A41000010EB9 /* EOSFile.h in Headers */,
+				BA75B2CD19F4A41000010EB9 /* EOSVolume.h in Headers */,
+				BA75B2CA19F4A41000010EB9 /* EOSCamera.h in Headers */,
+				BA75B2C719F4A41000010EB9 /* EOSManager.h in Headers */,
+				BA75B2C819F4A41000010EB9 /* EOSError.h in Headers */,
+				BA75B2CF19F4A41000010EB9 /* EOSPropertyObject.h in Headers */,
 				BA75B2A119F4A35B00010EB9 /* EOSFramework.h in Headers */,
+				BA75B2C919F4A41000010EB9 /* EOSObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA75B2C519F4A41000010EB9 /* EOSObject.m in Sources */,
+				BA75B2CC19F4A41000010EB9 /* EOSVolume.m in Sources */,
+				BA75B2D119F4A41000010EB9 /* EOSImage.m in Sources */,
+				BA75B2CB19F4A41000010EB9 /* EOSFile.m in Sources */,
+				BA75B2CE19F4A41000010EB9 /* EOSError.m in Sources */,
+				BA75B2C619F4A41000010EB9 /* EOSManager.m in Sources */,
+				BA75B2D319F4A41000010EB9 /* EOSCamera.m in Sources */,
+				BA75B2D019F4A41000010EB9 /* EOSPropertyObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,11 +362,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/henry/Documents/developer/EDSDK/EDSDK_64,
+				);
 				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = __MACOS__;
 				INFOPLIST_FILE = EOSFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -311,11 +384,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/henry/Documents/developer/EDSDK/EDSDK_64,
+				);
 				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = __MACOS__;
 				INFOPLIST_FILE = EOSFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -375,6 +453,7 @@
 				BA75B2B019F4A35B00010EB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA75B2B119F4A35B00010EB9 /* Build configuration list for PBXNativeTarget "EOSFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +462,7 @@
 				BA75B2B319F4A35B00010EB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

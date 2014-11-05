@@ -14,6 +14,11 @@ FOUNDATION_EXPORT double EOSFrameworkVersionNumber;
 //! Project version string for EOSFramework.
 FOUNDATION_EXPORT const unsigned char EOSFrameworkVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <EOSFramework/PublicHeader.h>
 
+#import <EOSFramework/EOSManager.h>
+#import <EOSFramework/EOSCamera.h>
+#import <EOSFramework/EOSVolume.h>
+#import <EOSFramework/EOSFile.h>
+#import <EOSFramework/EOSImage.h>
 
+#import <EOSFramework/EOSError.h>
