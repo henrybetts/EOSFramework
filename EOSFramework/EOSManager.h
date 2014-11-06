@@ -3,7 +3,7 @@
 //  EOSFramework
 //
 //  Created by Henry Betts on 22/09/2014.
-//  Copyright (c) 2014 Henry Betts. All rights reserved.
+//  Copyright (c) 2014 Henry Betts.
 //
 
 #import <Foundation/Foundation.h>

@@ -3,7 +3,7 @@
 //  EOSFramework
 //
 //  Created by Henry Betts on 25/09/2014.
-//  Copyright (c) 2014 Henry Betts. All rights reserved.
+//  Copyright (c) 2014 Henry Betts.
 //
 
 #import <EOSFramework/EOSPropertyObject.h>
@@ -48,6 +48,7 @@ typedef NS_OPTIONS(NSUInteger, EOSCompressionQuality){
 /*!
  @struct EOSImageQuality
  @brief Contains information regarding an image's size, format and compression.
+ @discussion Use the function EOSImageQualityFromCode to generate this struct from a number value retrieved from a camera.
  */
 typedef struct _EOSImageQuality {
     
