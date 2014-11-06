@@ -31,4 +31,4 @@ You may experience some issues regarding code signing, which causes building the
 
 ####Preprocessor Macros
 
-The EDSDK header files contain some outdated preprocessor macros. Go to the Build Settings of the target app, and add "__MACOS__" to the list of Preprocessor Macros.
+The EDSDK header files contain some outdated preprocessor macros. Go to the Build Settings of the target app, and add \__MACOS__ to the list of Preprocessor Macros.
