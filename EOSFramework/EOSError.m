@@ -10,7 +10,7 @@
 
 NSString *const EOSErrorDomain = @"com.EOSManager";
 
-EOSErrorType EOSGetErrorType(EOSError errorCode){
+EOSErrorType EOSErrorTypeFromCode(EOSError errorCode){
 
     switch (errorCode) {
     
