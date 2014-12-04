@@ -441,7 +441,24 @@ typedef NS_OPTIONS(NSUInteger, EOSAEMode){
 
 };
 
+typedef NS_OPTIONS(NSUInteger, EOSBatteryQuality){
+    
+    EOSBatteryQuality_Full = 3,
+    EOSBatteryQuality_High = 2,
+    EOSBatteryQuality_Half = 1,
+    EOSBatteryQuality_Low  = 0
+    
+};
 
+typedef NS_OPTIONS(NSUInteger, EOSMeteringMode){
+    
+    EOSMeteringMode_Spot        = 1,
+    EOSMeteringMode_Evaluative  = 3,
+    EOSMeteringMode_Partial     = 4,
+    EOSMeteringMode_CenterWeighted = 5,
+    EOSMeteringMode_Unknown     = 0xFFFFFFFF
+    
+};
 
 
 /**
