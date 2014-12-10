@@ -33,6 +33,9 @@ EdsError EDSCALLBACK EOSCameraStateEventHandler(EdsStateEvent inEvent, EdsUInt32
     if (inEvent == kEdsStateEvent_Shutdown)
         [[camera delegate] cameraDidDisconnect:camera];
     
+    else if (inEvent == kEdsStateEvent_WillSoonShutDown)
+        [[camera delegate] camera:camera willShutdownAfterDelay:inEventData];
+    
     return EDS_ERR_OK;
     
 }
@@ -46,6 +49,12 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
     
     else if (inEvent == kEdsObjectEvent_DirItemRemoved)
         [[camera delegate] camera:camera didRemoveFile:[[EOSFile alloc] initWithDirectoryItemRef:inRef]];
+    
+    else if (inEvent == kEdsObjectEvent_VolumeInfoChanged)
+        [[camera delegate] camera:camera didModifyVolume:[[EOSVolume alloc] initWithVolumeRef:inRef]];
+    
+    else if (inEvent == kEdsObjectEvent_VolumeUpdateItems)
+        [[camera delegate] camera:camera didFormatVolume:[[EOSVolume alloc] initWithVolumeRef:inRef]];
     
     return EDS_ERR_OK;
     
@@ -115,6 +124,13 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
             
         }
         
+        //camera will shutdown event
+        if ([delegate respondsToSelector:@selector(camera:willShutdownAfterDelay:)]){
+            
+            EdsSetCameraStateEventHandler(_baseRef, kEdsStateEvent_WillSoonShutDown, EOSCameraStateEventHandler, (__bridge EdsVoid *)(self));
+            
+        }
+        
         //file creation event
         if ([delegate respondsToSelector:@selector(camera:didCreateFile:)]){
             
@@ -128,6 +144,20 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
             EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_DirItemRemoved, EOSCameraObjectEventHandler, (__bridge EdsVoid *)(self));
             
         }
+        
+        //volume info changed event
+        if ([delegate respondsToSelector:@selector(camera:didModifyVolume:)]){
+            
+            EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_VolumeInfoChanged, EOSCameraObjectEventHandler, (__bridge EdsVoid *)(self));
+            
+        }
+        
+        //volume formatted event
+        if ([delegate respondsToSelector:@selector(camera:didFormatVolume:)]){
+            
+            EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_VolumeUpdateItems, EOSCameraObjectEventHandler, (__bridge EdsVoid *)(self));
+            
+        }
 
         
     }else{
@@ -137,9 +167,11 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
         EdsSetPropertyEventHandler(_baseRef, kEdsPropertyEvent_PropertyDescChanged, NULL, NULL);
         
         EdsSetCameraStateEventHandler(_baseRef, kEdsStateEvent_Shutdown, NULL, NULL);
+        EdsSetCameraStateEventHandler(_baseRef, kEdsStateEvent_WillSoonShutDown, NULL, NULL);
         
         EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_DirItemCreated, NULL, NULL);
         EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_DirItemRemoved, NULL, NULL);
+        EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_VolumeInfoChanged, NULL, NULL);
         
     }
     

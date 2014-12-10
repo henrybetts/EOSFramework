@@ -286,6 +286,28 @@ typedef NS_OPTIONS(NSInteger, EOSShutterButtonState){
 -(void)camera:(EOSCamera*)camera didRemoveFile:(EOSFile*)file;
 
 /*!
+ @brief Invoked when the info of a camera's volume changes.
+ @param camera The camera that sent the message.
+ @param volume The volume that was modified.
+ */
+-(void)camera:(EOSCamera*)camera didModifyVolume:(EOSVolume*)volume;
+
+/*!
+ @brief Invoked when a camera's volume is formatted.
+ @param camera The camera that sent the message.
+ @param volume The volume that was formatted.
+ */
+-(void)camera:(EOSCamera*)camera didFormatVolume:(EOSVolume*)volume;
+
+/*!
+ @brief Invoked when a camera is soon going to shutdown.
+ @discussion The time at which the camera issues the notification is model dependent, which is why the delay parameter is provided. To cancel the shutdown, send the EOSCameraCommand_ExtendShutdownTimer command to the camera.
+ @param camera The camera that is going to shutdown.
+ @param delay The time in seconds until the camera shutsdown.
+ */
+-(void)camera:(EOSCamera*)camera willShutdownAfterDelay:(NSUInteger)delay;
+
+/*!
  @brief Invoked when a camera is shutdown or disconnected.
  @param camera The camera that disconnected.
  */
