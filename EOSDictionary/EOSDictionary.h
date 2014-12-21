@@ -28,4 +28,7 @@
 @property NSDictionary* imageFormat;
 @property NSDictionary* compressionQuality;
 
+@property NSDictionary* batteryQuality;
+@property NSDictionary* meteringMode;
+
 @end

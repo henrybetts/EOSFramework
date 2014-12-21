@@ -308,6 +308,21 @@
                      @"unknown"     , [NSNumber numberWithUnsignedInteger:EOSCompressionQuality_Unknown],
                      nil];
     
+    dictionary.batteryQuality = [NSDictionary dictionaryWithObjectsAndKeys:
+                    @"Full", [NSNumber numberWithUnsignedInteger:EOSBatteryQuality_Full],
+                    @"High", [NSNumber numberWithUnsignedInteger:EOSBatteryQuality_High],
+                    @"Half", [NSNumber numberWithUnsignedInteger:EOSBatteryQuality_Half],
+                    @"Low", [NSNumber numberWithUnsignedInteger:EOSBatteryQuality_Low],
+                    nil];
+    
+    dictionary.meteringMode = [NSDictionary dictionaryWithObjectsAndKeys:
+                    @"Spot", [NSNumber numberWithUnsignedInteger:EOSMeteringMode_Spot],
+                    @"Evaluative", [NSNumber numberWithUnsignedInteger:EOSMeteringMode_Evaluative],
+                    @"Partial", [NSNumber numberWithUnsignedInteger:EOSMeteringMode_Partial],
+                    @"Center Weighted", [NSNumber numberWithUnsignedInteger:EOSMeteringMode_CenterWeighted],
+                    @"unknown", [NSNumber numberWithUnsignedInteger:EOSMeteringMode_Unknown],
+                    nil];
+    
 
     return dictionary;
     
