@@ -11,8 +11,9 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">EOSFramework </a></h1>
-				<a id="developerHome" href="../index.html">Henry Betts</a>
+				<h1><a id="libraryTitle" href="http://henrybetts.co.uk/eosframework">EOSFramework </a></h1>
+					<span id="developerHome">v0.2</span>
+				
 			</div>
 			
 			<div id="title" role="banner">
@@ -45,11 +46,17 @@
 	
 	<option value="//api/name/camera:didCreateFile:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didCreateFile:</option>
 	
+	<option value="//api/name/camera:didFormatVolume:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didFormatVolume:</option>
+	
+	<option value="//api/name/camera:didModifyVolume:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didModifyVolume:</option>
+	
 	<option value="//api/name/camera:didRemoveFile:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didRemoveFile:</option>
 	
 	<option value="//api/name/camera:supportedValuesDidChangeForProperty:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:supportedValuesDidChangeForProperty:</option>
 	
 	<option value="//api/name/camera:valueDidChangeForProperty:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:valueDidChangeForProperty:</option>
+	
+	<option value="//api/name/camera:willShutdownAfterDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:willShutdownAfterDelay:</option>
 	
 	<option value="//api/name/cameraDidDisconnect:">&nbsp;&nbsp;&nbsp;&nbsp;- cameraDidDisconnect:</option>
 	
@@ -83,11 +90,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didCreateFile:">camera:didCreateFile:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didFormatVolume:">camera:didFormatVolume:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didModifyVolume:">camera:didModifyVolume:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didRemoveFile:">camera:didRemoveFile:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:supportedValuesDidChangeForProperty:">camera:supportedValuesDidChangeForProperty:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:valueDidChangeForProperty:">camera:valueDidChangeForProperty:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:willShutdownAfterDelay:">camera:willShutdownAfterDelay:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cameraDidDisconnect:">cameraDidDisconnect:</a></span></li>
 	
@@ -170,6 +183,24 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/camera:didModifyVolume:">&ndash;&nbsp;camera:didModifyVolume:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/camera:didFormatVolume:">&ndash;&nbsp;camera:didFormatVolume:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/camera:willShutdownAfterDelay:">&ndash;&nbsp;camera:willShutdownAfterDelay:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/cameraDidDisconnect:">&ndash;&nbsp;cameraDidDisconnect:</a></code>
 	</span>
 	
@@ -218,6 +249,108 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>file</em></dt>
 			<dd><p>The file that was created.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">EOSCamera.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/camera:didFormatVolume:" title="camera:didFormatVolume:"></a>
+	<h3 class="subsubtitle method-title">camera:didFormatVolume:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked when a camera&rsquo;s volume is formatted.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(EOSCamera *)<em>camera</em> didFormatVolume:(EOSVolume *)<em>volume</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>The camera that sent the message.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>volume</em></dt>
+			<dd><p>The volume that was formatted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">EOSCamera.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/camera:didModifyVolume:" title="camera:didModifyVolume:"></a>
+	<h3 class="subsubtitle method-title">camera:didModifyVolume:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked when the info of a camera&rsquo;s volume changes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(EOSCamera *)<em>camera</em> didModifyVolume:(EOSVolume *)<em>volume</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>The camera that sent the message.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>volume</em></dt>
+			<dd><p>The volume that was modified.</p></dd>
 		</dl>
 		
 	</div>
@@ -396,6 +529,62 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/camera:willShutdownAfterDelay:" title="camera:willShutdownAfterDelay:"></a>
+	<h3 class="subsubtitle method-title">camera:willShutdownAfterDelay:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked when a camera is soon going to shutdown.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(EOSCamera *)<em>camera</em> willShutdownAfterDelay:(NSUInteger)<em>delay</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>The camera that is going to shutdown.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delay</em></dt>
+			<dd><p>The time in seconds until the camera shutsdown.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The time at which the camera issues the notification is model dependent, which is why the delay parameter is provided. To cancel the shutdown, send the EOSCameraCommand_ExtendShutdownTimer command to the camera.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">EOSCamera.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/cameraDidDisconnect:" title="cameraDidDisconnect:"></a>
 	<h3 class="subsubtitle method-title">cameraDidDisconnect:</h3>
 	
@@ -459,7 +648,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Henry Betts. All rights reserved. (Last updated: 2014-11-06)</span><br />
+						<p><span class="copyright">&copy; 2014 Henry Betts. All rights reserved. (Last updated: 2014-12-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

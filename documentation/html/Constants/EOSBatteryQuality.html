@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>EOSImageSize Constants Reference</title>
+		<title>EOSBatteryQuality Constants Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">EOSImageSize Constants Reference</h1>
+				<h1 class="hideInXcode">EOSBatteryQuality Constants Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -46,7 +46,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="EOSImageSize Constants Reference" name="top"></a>
+				<a title="EOSBatteryQuality Constants Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -55,7 +55,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">EOSImageSize Constants Reference</h1>
+						<h1 class="title title-header">EOSBatteryQuality Constants Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -63,7 +63,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">EOSImage.h</td>
+	<td class="specification-value">EOSPropertyObject.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -75,31 +75,21 @@
 					
                     
                     
-                    <h3 class="subsubtitle method-title">EOSImageSize</h3>
+                    <h3 class="subsubtitle method-title">EOSBatteryQuality</h3>
                     
                     <div class="section">
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_OPTIONS(NSUInteger, EOSImageSize ) {<br/>
+                        <code>typedef NS_OPTIONS(NSUInteger, EOSBatteryQuality ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Large</a> = kEdsImageSize_Large,<br/>
+                            &nbsp;&nbsp; <a href="">EOSBatteryQuality_Full</a> = 3,<br/>
                             
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Middle</a> = kEdsImageSize_Middle,<br/>
+                            &nbsp;&nbsp; <a href="">EOSBatteryQuality_High</a> = 2,<br/>
                             
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Small</a> = kEdsImageSize_Small,<br/>
+                            &nbsp;&nbsp; <a href="">EOSBatteryQuality_Half</a> = 1,<br/>
                             
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Middle1</a> = kEdsImageSize_Middle1,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Middle2</a> = kEdsImageSize_Middle2,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Small1</a> = kEdsImageSize_Small1,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Small2</a> = kEdsImageSize_Small2,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Small3</a> = kEdsImageSize_Small3,<br/>
-                            
-                            &nbsp;&nbsp; <a href="">EOSImageSize_Unknown</a> = kEdsImageSize_Unknown,<br/>
+                            &nbsp;&nbsp; <a href="">EOSBatteryQuality_Low</a> = 0,<br/>
                             
                             };</code>
                     
@@ -109,92 +99,42 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="EOSImageSize_Large"></a><code>EOSImageSize_Large</code></dt>
+                            <dt><a name="" title="EOSBatteryQuality_Full"></a><code>EOSBatteryQuality_Full</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
+		Declared In <code class="declared-in-ref">EOSPropertyObject.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="EOSImageSize_Middle"></a><code>EOSImageSize_Middle</code></dt>
+                            <dt><a name="" title="EOSBatteryQuality_High"></a><code>EOSBatteryQuality_High</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
+		Declared In <code class="declared-in-ref">EOSPropertyObject.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="EOSImageSize_Small"></a><code>EOSImageSize_Small</code></dt>
+                            <dt><a name="" title="EOSBatteryQuality_Half"></a><code>EOSBatteryQuality_Half</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
+		Declared In <code class="declared-in-ref">EOSPropertyObject.h</code>.
 	</p>
 	
 </dd>
                             
-                            <dt><a name="" title="EOSImageSize_Middle1"></a><code>EOSImageSize_Middle1</code></dt>
+                            <dt><a name="" title="EOSBatteryQuality_Low"></a><code>EOSBatteryQuality_Low</code></dt>
 <dd>
 
     
 	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="EOSImageSize_Middle2"></a><code>EOSImageSize_Middle2</code></dt>
-<dd>
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="EOSImageSize_Small1"></a><code>EOSImageSize_Small1</code></dt>
-<dd>
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="EOSImageSize_Small2"></a><code>EOSImageSize_Small2</code></dt>
-<dd>
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="EOSImageSize_Small3"></a><code>EOSImageSize_Small3</code></dt>
-<dd>
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
-	</p>
-	
-</dd>
-                            
-                            <dt><a name="" title="EOSImageSize_Unknown"></a><code>EOSImageSize_Unknown</code></dt>
-<dd>
-
-    
-	<p>
-		Declared In <code class="declared-in-ref">EOSImage.h</code>.
+		Declared In <code class="declared-in-ref">EOSPropertyObject.h</code>.
 	</p>
 	
 </dd>
