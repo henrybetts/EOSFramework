@@ -199,9 +199,9 @@ NSString *const EOSOverwrite = @"EOSOverwrite";
             NSURL* downloadDirectoryURL = [options objectForKey:EOSDownloadDirectoryURL];
             
             //create directory if it doesn't exist
-            if (![[NSFileManager defaultManager] fileExistsAtPath:[downloadDirectoryURL absoluteString]]){
+            if (![[NSFileManager defaultManager] fileExistsAtPath:[downloadDirectoryURL path]]){
                 
-                [[NSFileManager defaultManager] createDirectoryAtPath:[downloadDirectoryURL absoluteString] withIntermediateDirectories:NO attributes:nil error:nil];
+                [[NSFileManager defaultManager] createDirectoryAtPath:[downloadDirectoryURL path] withIntermediateDirectories:NO attributes:nil error:nil];
                 
             }
             

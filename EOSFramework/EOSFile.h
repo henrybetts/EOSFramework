@@ -295,7 +295,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwrite;
  @param options The dictionary of download options.
  @param contextInfo The object that was passed to the download method.
  */
--(void)didReceiveDownloadProgress:(NSUInteger)progress forFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(void*)contextInfo;
+//-(void)didReceiveDownloadProgress:(NSUInteger)progress forFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(void*)contextInfo;
 
 
 @end
