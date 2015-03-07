@@ -184,8 +184,7 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
 
 -(BOOL)openSession:(NSError *__autoreleasing *)error{
     
-    //EOSError errorCode = EdsOpenSession(_baseRef);
-    EOSError errorCode = EOSError_InternalError;
+    EOSError errorCode = EdsOpenSession(_baseRef);
     
     if (errorCode != EOSError_OK){
         
