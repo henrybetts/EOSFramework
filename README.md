@@ -7,10 +7,10 @@ Visit http://henrybetts.co.uk/eosframework for more information and example code
 
 EOSFramework is for developers who wish to develop Mac applications that have the ability to interact with Canon DSLR cameras. It acts as a wrapper around Canon’s EDSDK framework, making it simpler to use and easier to fit into Cocoa applications. It can do (almost) everything that EDSDK can do, such as getting and setting properties of a camera, managing camera files and sending commands. The framework was initially designed to handle a large number of cameras at once, but it works just as well with a single camera.
 
-#New for v0.2
+#New for v0.3
 
-* Added EOSBatteryQuality and EOSMeteringMode definitions
-* New EOSCameraDelegate methods - camera:didModifyVolume:, camera:didFormatVolume: and camera:willShutdownAfterDelay:
+* Fixed a major bug that produced an internal error when opening a camera session.
+* Fixed a bug that caused file downloads to fail if the target directory did not exist.
 
 #Requirements
 

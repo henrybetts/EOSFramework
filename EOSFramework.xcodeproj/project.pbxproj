@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA686AED1A5ADFB6003CA669 /* EDSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA686AEC1A5ADFB6003CA669 /* EDSDK.framework */; };
 		BA75B2A119F4A35B00010EB9 /* EOSFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2A019F4A35B00010EB9 /* EOSFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA75B2AB19F4A35B00010EB9 /* EOSFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2AA19F4A35B00010EB9 /* EOSFrameworkTests.m */; };
 		BA75B2C419F4A41000010EB9 /* EOSFile.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2B419F4A41000010EB9 /* EOSFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,10 +26,10 @@
 		BA75B2D119F4A41000010EB9 /* EOSImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2C119F4A41000010EB9 /* EOSImage.m */; };
 		BA75B2D219F4A41000010EB9 /* EOSImage.h in Headers */ = {isa = PBXBuildFile; fileRef = BA75B2C219F4A41000010EB9 /* EOSImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA75B2D319F4A41000010EB9 /* EOSCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = BA75B2C319F4A41000010EB9 /* EOSCamera.m */; };
-		BA75B2D519F4A60400010EB9 /* EDSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA75B2D419F4A60300010EB9 /* EDSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA686AEC1A5ADFB6003CA669 /* EDSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EDSDK.framework; path = ../EDSDK/EDSDK_64/EDSDK.framework; sourceTree = "<group>"; };
 		BA75B29B19F4A35B00010EB9 /* EOSFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EOSFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA75B29F19F4A35B00010EB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA75B2A019F4A35B00010EB9 /* EOSFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSFramework.h; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		BA75B2C119F4A41000010EB9 /* EOSImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSImage.m; sourceTree = "<group>"; };
 		BA75B2C219F4A41000010EB9 /* EOSImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOSImage.h; sourceTree = "<group>"; };
 		BA75B2C319F4A41000010EB9 /* EOSCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOSCamera.m; sourceTree = "<group>"; };
-		BA75B2D419F4A60300010EB9 /* EDSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EDSDK.framework; path = ../EDSDK/EDSDK_64/EDSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA75B2D519F4A60400010EB9 /* EDSDK.framework in Frameworks */,
+				BA686AED1A5ADFB6003CA669 /* EDSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,10 +76,10 @@
 		BA75B29119F4A35B00010EB9 = {
 			isa = PBXGroup;
 			children = (
+				BA686AEC1A5ADFB6003CA669 /* EDSDK.framework */,
 				BA75B29D19F4A35B00010EB9 /* EOSFramework */,
 				BA75B2A719F4A35B00010EB9 /* EOSFrameworkTests */,
 				BA75B29C19F4A35B00010EB9 /* Products */,
-				BA75B2D419F4A60300010EB9 /* EDSDK.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,7 +315,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -352,7 +352,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
