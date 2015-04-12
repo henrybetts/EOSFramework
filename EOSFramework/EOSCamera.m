@@ -70,8 +70,6 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
     if (self){
 
         _isOpen = false;
-        _state = EOSCameraState_Default;
-        //_shutterButtonState = kEdsCameraCommand_ShutterButton_OFF;
         
         EdsDeviceInfo deviceInfo;
         
@@ -250,7 +248,31 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
 
 -(BOOL)sendCommand:(EOSCameraCommand)command withParameter:(NSInteger)parameter error:(NSError *__autoreleasing *)error{
     
-    EOSError errorCode = EdsSendCommand(_baseRef, command, (EdsUInt32)parameter);
+    EOSError errorCode;
+    
+    switch (command) {
+            
+        case EOSCommand_LockUI:
+            errorCode = EdsSendStatusCommand(_baseRef, kEdsCameraStatusCommand_UILock, 0);
+            break;
+            
+        case EOSCommand_UnlockUI:
+            errorCode = EdsSendStatusCommand(_baseRef, kEdsCameraStatusCommand_UIUnLock, 0);
+            break;
+            
+        case EOSCommand_EnterDirectTransfer:
+            errorCode = EdsSendStatusCommand(_baseRef, kEdsCameraStatusCommand_EnterDirectTransfer, 0);
+            break;
+            
+        case EOSCommand_ExitDirectTransfer:
+            errorCode = EdsSendStatusCommand(_baseRef, kEdsCameraStatusCommand_ExitDirectTransfer, 0);
+            break;
+            
+        default:
+            errorCode = EdsSendCommand(_baseRef, command, (EdsInt32)parameter);
+            break;
+    }
+
     
     if (errorCode != EOSError_OK){
         
@@ -267,49 +289,6 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
 -(BOOL)sendCommand:(EOSCameraCommand)command error:(NSError *__autoreleasing *)error{
     
     return [self sendCommand:command withParameter:0 error:error];
-    
-}
-
--(BOOL)setState:(EOSCameraState)state error:(NSError *__autoreleasing *)error{
-    
-    EOSError errorCode = EOSError_OK;
-    
-    if (state != _state){
-    
-        EdsCameraStatusCommand command;
-    
-        switch (state){
-            
-            case EOSCameraState_Default:
-                command = (_state == EOSCameraState_UILocked) ? kEdsCameraStatusCommand_UIUnLock : kEdsCameraStatusCommand_ExitDirectTransfer;
-                break;
-            
-            case EOSCameraState_UILocked:
-                command = kEdsCameraStatusCommand_UILock;
-                break;
-                
-            case EOSCameraState_DirectTransfer:
-                command = kEdsCameraStatusCommand_EnterDirectTransfer;
-            
-        }
-    
-        errorCode = EdsSendStatusCommand(_baseRef, command, 0);
-        
-    }else{
-        
-        errorCode = EOSError_InvalidFunctionCall;
-        
-    }
-    
-    if (errorCode != EOSError_OK){
-        
-        if (error)
-            *error = EOSCreateError(errorCode);
-        return NO;
-        
-    }
-    
-    return YES;
     
 }
 

@@ -15,12 +15,24 @@
 /*!
  Camera commands
  */
-typedef NS_OPTIONS(NSUInteger, EOSCameraCommand){
+typedef NS_ENUM(NSUInteger, EOSCameraCommand){
     
+    /** Reqests the camera to shoot */
     EOSCommand_TakePicture          = kEdsCameraCommand_TakePicture,
+    
+    /** Requests to extend the time for the auto shut-off timer. */
     EOSCommand_ExtendShutDownTimer  = kEdsCameraCommand_ExtendShutDownTimer,
+    
+    /** Starts bulb shooting */
     EOSCommand_BulbStart            = kEdsCameraCommand_BulbStart,
+    
+    /** Ends bulb shooting */
     EOSCommand_BulbEnd              = kEdsCameraCommand_BulbEnd,
+    
+    /** Controls shutter button operations.
+      
+     This command should be used with one of the asda parameters. The command is supported by the EOS 50D or EOS 5D Mark II or later cameras.
+     */
     EOSCommand_PressShutterButton   = kEdsCameraCommand_PressShutterButton,
     
     /**
@@ -30,23 +42,29 @@ typedef NS_OPTIONS(NSUInteger, EOSCameraCommand){
     //EOSCommand_DriveLens            = kEdsCameraCommand_DriveLensEvf,
     //EOSCommand_DoClickWBEvf         = kEdsCameraCommand_DriveLensEvf,
     
+    /**
+     Status Commands
+     */
+    
+    /** Locks the camera's UI */
+    EOSCommand_LockUI,
+    
+    /** Unlocks the camera's UI */
+    EOSCommand_UnlockUI,
+    
+    /** Put the camera in direct transfer mode */
+    EOSCommand_EnterDirectTransfer,
+    
+    /** Ends direct transfer mode */
+    EOSCommand_ExitDirectTransfer
+    
 };
 
-/*!
- Camera states
- */
-typedef NS_ENUM(NSUInteger, EOSCameraState){
-    
-    EOSCameraState_UILocked,
-    EOSCameraState_DirectTransfer,
-    EOSCameraState_Default
-    
-};
 
 /*!
  Camera shutter button states
  */
-typedef NS_OPTIONS(NSInteger, EOSShutterButtonState){
+typedef NS_ENUM(NSInteger, EOSShutterButtonState){
     
     EOSShutterButtonState_Off               = kEdsCameraCommand_ShutterButton_OFF,
     EOSShutterButtonState_Halfway           = kEdsCameraCommand_ShutterButton_Halfway,
@@ -172,7 +190,7 @@ typedef NS_OPTIONS(NSInteger, EOSShutterButtonState){
 ///-----------------------
 
 /*!
- Sends a command with a parameter to the camera.
+ @brief Sends a command with a parameter to the camera.
  @param command The command.
  @param parameter A parameter to send with the command.
  @param error If unsuccessful, an instance of NSError describes the problem.
@@ -181,31 +199,12 @@ typedef NS_OPTIONS(NSInteger, EOSShutterButtonState){
 -(BOOL)sendCommand:(EOSCameraCommand)command withParameter:(NSInteger)parameter error:(NSError* __autoreleasing*)error;
 
 /*!
- Sends a command to the camera.
+ @brief Sends a command to the camera.
  @param command The command.
  @param error If unsuccessful, an instance of NSError describes the problem.
  @return YES if successful, otherwise NO.
  */
 -(BOOL)sendCommand:(EOSCameraCommand)command error:(NSError* __autoreleasing*)error;
-
-
-
-///-------------------------
-/// @name Managing the State
-///-------------------------
-
-/*!
- The camera's current state, as defined in EOSCameraState.
- */
-@property (readonly) EOSCameraState state;
-
-/*!
- @brief Sets the state of the camera.
- @param state The target state, as defined in EOSCameraState.
- @param error If unsuccessful, an instance of NSError describes the problem.
- @return YES if successful, otherwise NO.
- */
--(BOOL)setState:(EOSCameraState)state error:(NSError* __autoreleasing*)error;
 
 
 
