@@ -12,33 +12,66 @@
 /*!
  Properties of cameras and images to be used with the methods of EOSPropertyObject.
  */
-typedef NS_OPTIONS(NSUInteger, EOSProperty){
+typedef NS_ENUM(NSUInteger, EOSProperty){
     
     /*----------------------------------
     Camera Setting Properties
     ----------------------------------*/
     EOSProperty_Unknown                 = kEdsPropID_Unknown,
     
+    /** A string representing the product name */
     EOSProperty_ProductName             = kEdsPropID_ProductName,
+    
+    /** A string indicating the product serial number. */
+    EOSProperty_SerialNumber            = kEdsPropID_BodyIDEx,
+    
+    /** A string identifying the owner as registered on the camera. */
     EOSProperty_OwnerName               = kEdsPropID_OwnerName,
+    
+    /** A string identifying the manufacturer. */
     EOSProperty_MakerName               = kEdsPropID_MakerName,
+    
+    /** Not yet supported */
     EOSProperty_DateTime                = kEdsPropID_DateTime,
+    
+    /** A string identifying the camera's firmware version. */
     EOSProperty_FirmwareVersion         = kEdsPropID_FirmwareVersion,
+    
+    /**
+     @brief An integer indicating the camera battery level.
+     @discussion The battery level is represented by a percentage (0-100), or -1 if the camera is AC powered.
+     */
     EOSProperty_BatteryLevel            = kEdsPropID_BatteryLevel,
+    
+    /** The level of degradation of the battery, represented by an EOSBateryQuality value. */
+    EOSProperty_BatteryQuality          = kEdsPropID_BatteryQuality,
+    
+    /** */
     EOSProperty_Cfn                     = kEdsPropID_CFn,
     EOSProperty_SaveTo                  = kEdsPropID_SaveTo,
+    
+    /** A string representing the name of the current storage media */
     EOSProperty_CurrentStorage          = kEdsPropID_CurrentStorage,
+    
+    /** A string representing the name of the current folder (for saving images to). */
     EOSProperty_CurrentFolder           = kEdsPropID_CurrentFolder,
+    
+    /** */
     EOSProperty_MyMenu                  = kEdsPropID_MyMenu,
-    EOSProperty_BatteryQuality          = kEdsPropID_BatteryQuality,
-    EOSProperty_SerialNumber            = kEdsPropID_BodyIDEx,
     EOSProperty_HDDirectoryStructure    = kEdsPropID_HDDirectoryStructure,
 
     
     /*----------------------------------
      Image Properties
      ----------------------------------*/
+    
+    /**
+     @brief The image quality, represented by an unsigned integer code.
+     @discussion The value for this property contains information about the image format, size and compression for both the main and secondary images. This information can be obtained using the EOSImageQualityFromCode function.
+     */
     EOSProperty_ImageQuality        = kEdsPropID_ImageQuality,
+    
+    /** */
     EOSProperty_JPEGQuality         = kEdsPropID_JpegQuality,
     EOSProperty_Orientation         = kEdsPropID_Orientation,
     EOSProperty_ICCProfile          = kEdsPropID_ICCProfile,
@@ -99,17 +132,39 @@ typedef NS_OPTIONS(NSUInteger, EOSProperty){
      Capture Properties
      ----------------------------------*/
     
+    /** The current shooting mode, represented by an EOSAEMode value. */
     EOSProperty_AEMode                  = kEdsPropID_AEMode,
+    
+    /** The current drive mode, represented by an EOSDriveMode value. */
     EOSProperty_DriveMode               = kEdsPropID_DriveMode,
+    
+    /** The ISO sensitivity, represented by an EOSISOSpeed value. */
     EOSProperty_ISOSpeed                = kEdsPropID_ISOSpeed,
+    
+    /** The metering mode, represented by an EOSMeteringMode value. */
     EOSProperty_MeteringMode            = kEdsPropID_MeteringMode,
+    
+    /** The auto-focus mode, represented by an EOSAFMode value. */
     EOSProperty_AFMode                  = kEdsPropID_AFMode,
+    
+    /** The aperture, represented by an EOSAperture value. */
     EOSProperty_Aperture                = kEdsPropID_Av,
+    
+    /** The shutter speed, represented by an EOSShutterSpeed value. */
     EOSProperty_ShutterSpeed            = kEdsPropID_Tv,
+    
+    /** The exposure compensation, represented by an EOSExposureCompensation value. */
     EOSProperty_ExposureCompensation    = kEdsPropID_ExposureCompensation,
+    
+    /** The flash compensation, represented by an EOSExposureCompensation value. */
     EOSProperty_FlashCompensation       = kEdsPropID_FlashCompensation,
+    
     EOSProperty_FocalLength             = kEdsPropID_FocalLength,
+    
+    /** An unsigned integer, representing the number of shots available on a camera. */
     EOSProperty_AvailableShots          = kEdsPropID_AvailableShots,
+    
+    /** */
     EOSProperty_Bracket                 = kEdsPropID_Bracket,
     EOSProperty_WhiteBalanceBracket     = kEdsPropID_WhiteBalanceBracket,
     EOSProperty_LensName                = kEdsPropID_LensName,
@@ -120,9 +175,17 @@ typedef NS_OPTIONS(NSUInteger, EOSProperty){
     EOSProperty_FlashOn                 = kEdsPropID_FlashOn,
     EOSProperty_RedEye                  = kEdsPropID_RedEye,
     EOSProperty_FlashMode               = kEdsPropID_FlashMode,
-    EOSProperty_LensStatus              = kEdsPropID_LensStatus,
+    
+    /** A boolean, indicating whether the lens is attached to the camera. */
+    EOSProperty_isLensAttached          = kEdsPropID_LensStatus,
+    
+    /** A string identifying the photographer as registered on the camera. */
     EOSProperty_Artist                  = kEdsPropID_Artist,
+    
+    /** A string identifying the copyright information as registered on the camera. */
     EOSProperty_Copyright               = kEdsPropID_Copyright,
+    
+    /** */
     EOSProperty_DepthOfField            = kEdsPropID_DepthOfField,
     EOSProperty_EFCompensation          = kEdsPropID_EFCompensation,
     EOSProperty_AEModeSelect            = kEdsPropID_AEModeSelect
@@ -159,7 +222,7 @@ typedef NS_OPTIONS(NSUInteger, EOSProperty){
     
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSISOSpeed){
+typedef NS_ENUM(NSUInteger, EOSISOSpeed){
     
     EOSISOSpeed_Auto    = 0x00,
     EOSISOSpeed_6       = 0x28,
@@ -199,7 +262,7 @@ typedef NS_OPTIONS(NSUInteger, EOSISOSpeed){
     
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSShutterSpeed){
+typedef NS_ENUM(NSUInteger, EOSShutterSpeed){
     
     EOSShutterSpeed_Bulb = 0x0c,
     EOSShutterSpeed_30_Seconds = 0x10,
@@ -280,7 +343,7 @@ typedef NS_OPTIONS(NSUInteger, EOSShutterSpeed){
     
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSAperture){
+typedef NS_ENUM(NSUInteger, EOSAperture){
     
     EOSAperture_1 = 0x08,
     EOSAperture_1_1 = 0x0B,
@@ -340,7 +403,7 @@ typedef NS_OPTIONS(NSUInteger, EOSAperture){
     
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSWhiteBalance){
+typedef NS_ENUM(NSUInteger, EOSWhiteBalance){
     
     EOSWhiteBalance_Auto        = kEdsWhiteBalance_Auto,
     EOSWhiteBalance_Daylight    = kEdsWhiteBalance_Daylight,
@@ -365,7 +428,7 @@ typedef NS_OPTIONS(NSUInteger, EOSWhiteBalance){
     
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSExposureCompensation){
+typedef NS_ENUM(NSUInteger, EOSExposureCompensation){
     
     EOSExposureCompensation_Plus_3 = 0x18,
     EOSExposureCompensation_Plus_2__2_3 = 0x15,
@@ -399,7 +462,7 @@ typedef NS_OPTIONS(NSUInteger, EOSExposureCompensation){
 
 
 
-typedef NS_OPTIONS(NSUInteger, EOSDriveMode){
+typedef NS_ENUM(NSUInteger, EOSDriveMode){
     
     EOSDriveMode_Single                             = 0x00000000,
     EOSDriveMode_Continuous                         = 0x00000001,
@@ -414,7 +477,7 @@ typedef NS_OPTIONS(NSUInteger, EOSDriveMode){
     
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSAEMode){
+typedef NS_ENUM(NSUInteger, EOSAEMode){
 
     EOSAEMode_Program          = kEdsAEMode_Program,
     EOSAEMode_Tv               = kEdsAEMode_Tv,
@@ -441,7 +504,7 @@ typedef NS_OPTIONS(NSUInteger, EOSAEMode){
 
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSBatteryQuality){
+typedef NS_ENUM(NSUInteger, EOSBatteryQuality){
     
     EOSBatteryQuality_Full = 3,
     EOSBatteryQuality_High = 2,
@@ -450,13 +513,23 @@ typedef NS_OPTIONS(NSUInteger, EOSBatteryQuality){
     
 };
 
-typedef NS_OPTIONS(NSUInteger, EOSMeteringMode){
+typedef NS_ENUM(NSUInteger, EOSMeteringMode){
     
     EOSMeteringMode_Spot        = 1,
     EOSMeteringMode_Evaluative  = 3,
     EOSMeteringMode_Partial     = 4,
     EOSMeteringMode_CenterWeighted = 5,
     EOSMeteringMode_Unknown     = 0xFFFFFFFF
+    
+};
+
+typedef NS_ENUM(NSUInteger, EOSAFMode){
+    
+    EOSAFMode_OneShot = 0,
+    EOSAFMode_AIServo = 1,
+    EOSAFMode_AIFocus = 2,
+    EOSAFMode_Manual = 3,
+    EOSAFMode_Unknown = 0xffffffff
     
 };
 
