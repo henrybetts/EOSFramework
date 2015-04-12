@@ -11,11 +11,10 @@
 #import <EOSFramework/EOSImage.h>
 
 
-
 /*!
- @brief A list of file attributes
+ @brief File attributes
  */
-typedef NS_OPTIONS(NSUInteger, EOSFileAttribute){
+typedef NS_ENUM(NSUInteger, EOSFileAttribute){
     
     EOSFileAttribute_Normal     = kEdsFileAttribute_Normal,
     EOSFileAttribute_ReadOnly   = kEdsFileAttribute_ReadOnly,
@@ -26,39 +25,39 @@ typedef NS_OPTIONS(NSUInteger, EOSFileAttribute){
 };
 
 @protocol EOSDownloadDelegate;
-//@protocol EOSReadDataDelegate;
+@protocol EOSReadDataDelegate;
 
 
 // Allowed keys in the options dictionary used when downloading a file
 
 /*!
- @const EOSDownloadDirectoryURL
+ @const EOSDownloadDirectoryURLKey
  @brief   Download directory URL.
  @discussion The value for this key should be an NSURL object referencing a writable directory. The downloaded file will be saved in that directory.
  */
-FOUNDATION_EXPORT NSString *const EOSDownloadDirectoryURL;
+FOUNDATION_EXPORT NSString *const EOSDownloadDirectoryURLKey;
 
 /*!
- @const EOSSaveAsFilename
+ @const EOSSaveAsFilenameKey
  @brief   Save as filename.
  @discussion The value for this key should be an NSString object containing the name to be used for the downloaded file.
  */
-FOUNDATION_EXPORT NSString *const EOSSaveAsFilename;
+FOUNDATION_EXPORT NSString *const EOSSaveAsFilenameKey;
 
 /*!
- @const      EOSSavedFilename
+ @const      EOSSavedFilenameKey
  @abstract   Saved filename.
  @discussion The value for this key will be an NSString object containing the actual name of the saved file. The options dictionary returned in the EOSDownloadDelegate methods will have this key.
  */
-FOUNDATION_EXPORT NSString *const EOSSavedFilename;
+FOUNDATION_EXPORT NSString *const EOSSavedFilenameKey;
 
 
 /*!
- @const      EOSOverwrite
+ @const      EOSOverwriteKey
  @abstract   Overwrite existing file?
  @discussion The value for this key should be an NSNumber object representing a boolean value. If this value is YES, the downloaded file will overwrite an existing file with the same name and extension.
  */
-FOUNDATION_EXPORT NSString *const EOSOverwrite;
+FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
 
 
 
@@ -235,7 +234,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwrite;
 
 /*!
  @brief Downloads the file asynchronously.
- @discussion When the download is completed, the didDownloadFile:withOptions:contextInfo:error method of the delegate object is called. The content of the error returned should be examined to determine if the download completed successfully. See EOSDownloadDelegate for more information. The options dictionary may contain the keys; EOSDownloadDirectoryURL, EOSSaveAsFilename and EOSOverwrite.
+ @discussion When the download is completed, the didDownloadFile:withOptions:contextInfo:error method of the delegate object is called. The content of the error returned should be examined to determine if the download completed successfully. See EOSDownloadDelegate for more information. The options dictionary may contain the keys; EOSDownloadDirectoryURLKey, EOSSaveAsFilenameKey and EOSOverwriteKey.
  @param options A dictionary of options.
  @param delegate The download delegate.
  @param contextInfo An object that will be passed to the delegate methods. Can be nil.
@@ -248,7 +247,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwrite;
  @param delegate The read data delegate.
  @param contextInfo An object that will be passed to the delegate methods. Can be nil.
 */
-//-(void)readDataWithDelegate:(id<EOSReadDataDelegate>)delegate contextInfo:(id)contextInfo;
+-(void)readDataWithDelegate:(id<EOSReadDataDelegate>)delegate contextInfo:(id)contextInfo;
 
 
 
@@ -277,7 +276,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwrite;
 
 /*!
  @brief Invoked when the download is complete.
- @discussion The content of error returned should be examined to determine if the download completed successfully. The options dictionary will contain the additional key; EOSSavedFilename.
+ @discussion The content of error returned should be examined to determine if the download completed successfully. The options dictionary will contain the additional key; EOSSavedFilenameKey.
  @param file The file that was downloaded.
  @param options The dictionary of download options.
  @param contextInfo The object that was passed to the download method.
@@ -289,43 +288,43 @@ FOUNDATION_EXPORT NSString *const EOSOverwrite;
 
 /*!
  @brief Invoked when progress is recieved for the download of a file.
- @discussion The options dictionary will contain the additional key; EOSSavedFilename.
+ @discussion The options dictionary will contain the additional key; EOSSavedFilenameKey.
  @param progress The download progress as a percentage.
  @param file The file that is being downloaded.
  @param options The dictionary of download options.
  @param contextInfo The object that was passed to the download method.
  */
-//-(void)didReceiveDownloadProgress:(NSUInteger)progress forFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(void*)contextInfo;
+-(void)didReceiveDownloadProgress:(NSUInteger)progress forFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(id)contextInfo;
 
 
 @end
 
 
 /*!
- The EOSDownloadDelegate protocol defines the methods implemented by the delegate used during the reading of file data.
+ The EOSReadDataDelegate protocol defines the methods implemented by the delegate used during the reading of file data.
  */
-//@protocol EOSReadDataDelegate <NSObject>
-//
-//@required
-//
-///*!
-// @brief Invoked when the reading of file data is complete.
-// @discussion The content of error returned should be examined to determine if the reading completed successfully.
-// @param data The file data.
-// @param file The file that was read.
-// @param contextInfo The object that was passed to the readData method.
-// @param error If unsuccessful, an instance of NSError describes the problem.
-// */
-//-(void)didReadData:(NSData*)data forFile:(EOSFile*)file contextInfo:(id)contextInfo error:(NSError*)error;
-//
-//@optional
-//
-///*!
-// @brief Invoked when progress is recieved for the reading of file data.
-// @param progress The read progress as a percentage.
-// @param file The file that is being read.
-// @param contextInfo The object that was passed to the readData method.
-// */
-//-(void)didReceiveReadProgress:(NSUInteger)progress forFile:(EOSFile*)file contextInfo:(id)contextInfo;
-//
-//@end
+@protocol EOSReadDataDelegate <NSObject>
+
+@required
+
+/*!
+ @brief Invoked when the reading of file data is complete.
+ @discussion The content of error returned should be examined to determine if the reading completed successfully.
+ @param data The file data.
+ @param file The file that was read.
+ @param contextInfo The object that was passed to the readData method.
+ @param error If unsuccessful, an instance of NSError describes the problem.
+ */
+-(void)didReadData:(NSData*)data forFile:(EOSFile*)file contextInfo:(id)contextInfo error:(NSError*)error;
+
+@optional
+
+/*!
+ @brief Invoked when progress is recieved for the reading of file data.
+ @param progress The read progress as a percentage.
+ @param file The file that is being read.
+ @param contextInfo The object that was passed to the readData method.
+ */
+-(void)didReceiveReadProgress:(NSUInteger)progress forFile:(EOSFile*)file contextInfo:(id)contextInfo;
+
+@end

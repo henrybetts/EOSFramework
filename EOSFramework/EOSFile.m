@@ -10,39 +10,64 @@
 #import <EDSDK/EDSDK.h>
 #import <EOSFramework/EOSError.h>
 
-NSString *const EOSDownloadDirectoryURL = @"EOSDownloadDirectoryURL";
-NSString *const EOSSaveAsFilename = @"EOSSaveAsFilename";
-NSString *const EOSSavedFilename = @"EOSSavedFilename";
-NSString *const EOSOverwrite = @"EOSOverwrite";
+NSString *const EOSDownloadDirectoryURLKey = @"EOSDownloadDirectoryURLKey";
+NSString *const EOSSaveAsFilenameKey = @"EOSSaveAsFilenameKey";
+NSString *const EOSSavedFilenameKey = @"EOSSavedFilenameKey";
+NSString *const EOSOverwriteKey = @"EOSOverwriteKey";
 
-//EDSCALLBACK EdsError downloadProgressCallback(EdsUInt32 inPercent, EdsVoid* inContext, EdsBool* outCancel){
-//    
-//    NSArray* array = (__bridge NSArray *)(inContext);
-//    id target = [array firstObject];
-//    SEL selector = @selector(didReceiveDownloadProgress:forFile:withOptions:contextInfo:);
-//
-//    NSInvocation* inv = [NSInvocation invocationWithMethodSignature:[target methodSignatureForSelector:selector]];
-//    
-//    [inv setTarget:target];
-//    [inv setSelector:selector];
-//    
-//    [inv setArgument:&inPercent atIndex:2]; //progress
-//    
-//    EOSFile* file = [array objectAtIndex:1];
-//    NSDictionary* options = [array objectAtIndex:2];
-//    id contextInfo = [array count] > 3 ? [array objectAtIndex:3] : nil;
-//    
-//    [inv setArgument:&file atIndex:3];
-//    [inv setArgument:&options atIndex:4];
-//    [inv setArgument:&contextInfo atIndex:5];
-//    
-//    dispatch_async(dispatch_get_main_queue(), ^(void){
-//        [inv invoke];
-//    });
-//    
-//    return EDS_ERR_OK;
-//    
-//};
+EDSCALLBACK EdsError downloadProgressCallback(EdsUInt32 inPercent, EdsVoid* inContext, EdsBool* outCancel){
+    
+    NSArray* array = (__bridge NSArray *)(inContext);
+    id target = [array firstObject];
+    SEL selector = @selector(didReceiveDownloadProgress:forFile:withOptions:contextInfo:);
+
+    NSInvocation* inv = [NSInvocation invocationWithMethodSignature:[target methodSignatureForSelector:selector]];
+    
+    [inv setTarget:target];
+    [inv setSelector:selector];
+    
+    NSUInteger progress = inPercent;
+    [inv setArgument:&progress atIndex:2]; //progress
+    
+    EOSFile* file = [array objectAtIndex:1];
+    NSDictionary* options = [array objectAtIndex:2];
+    id contextInfo = [array count] > 3 ? [array objectAtIndex:3] : nil;
+    
+    [inv setArgument:&file atIndex:3];
+    [inv setArgument:&options atIndex:4];
+    [inv setArgument:&contextInfo atIndex:5];
+    
+    [inv performSelectorOnMainThread:@selector(invoke) withObject:nil waitUntilDone:YES];
+    
+    return EDS_ERR_OK;
+    
+};
+
+EDSCALLBACK EdsError readProgressCallback(EdsUInt32 inPercent, EdsVoid* inContext, EdsBool* outCancel){
+    
+    NSArray* array = (__bridge NSArray *)(inContext);
+    id target = [array firstObject];
+    SEL selector = @selector(didReceiveReadProgress:forFile:contextInfo:);
+    
+    NSInvocation* inv = [NSInvocation invocationWithMethodSignature:[target methodSignatureForSelector:selector]];
+    
+    [inv setTarget:target];
+    [inv setSelector:selector];
+    
+    NSUInteger progress = inPercent;
+    [inv setArgument:&progress atIndex:2]; //progress
+    
+    EOSFile* file = [array objectAtIndex:1];
+    id contextInfo = [array count] > 2 ? [array objectAtIndex:2] : nil;
+    
+    [inv setArgument:&file atIndex:3];
+    [inv setArgument:&contextInfo atIndex:4];
+    
+    [inv performSelectorOnMainThread:@selector(invoke) withObject:nil waitUntilDone:YES];
+    
+    return EDS_ERR_OK;
+    
+};
 
 @implementation EOSFile
 
@@ -167,8 +192,8 @@ NSString *const EOSOverwrite = @"EOSOverwrite";
 
 -(void)downloadWithOptions:(NSDictionary *)options delegate:(id)delegate contextInfo:(id)contextInfo{
     
-    //SEL didReceiveProgressSelector = @selector(didReceiveDownloadProgress:forFile:withOptions:contextInfo:);
-    //BOOL delegateRespondsToProgress = [delegate respondsToSelector:didReceiveProgressSelector];
+    SEL didReceiveProgressSelector = @selector(didReceiveDownloadProgress:forFile:withOptions:contextInfo:);
+    BOOL delegateRespondsToProgress = [delegate respondsToSelector:didReceiveProgressSelector];
     
     //download in background thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
@@ -196,18 +221,18 @@ NSString *const EOSOverwrite = @"EOSOverwrite";
             
             
             //get download directory URL
-            NSURL* downloadDirectoryURL = [options objectForKey:EOSDownloadDirectoryURL];
+            NSURL* downloadDirectoryURL = [options objectForKey:EOSDownloadDirectoryURLKey];
             
             //create directory if it doesn't exist
             if (![[NSFileManager defaultManager] fileExistsAtPath:[downloadDirectoryURL path]]){
                 
-                [[NSFileManager defaultManager] createDirectoryAtPath:[downloadDirectoryURL path] withIntermediateDirectories:NO attributes:nil error:nil];
+                [[NSFileManager defaultManager] createDirectoryAtPath:[downloadDirectoryURL path] withIntermediateDirectories:YES attributes:nil error:nil];
                 
             }
             
             
             //get target filename
-            NSString* saveAsFilename = [options objectForKey:EOSSaveAsFilename];
+            NSString* saveAsFilename = [options objectForKey:EOSSaveAsFilenameKey];
             
             if (saveAsFilename == nil){
                 saveAsFilename = [info name];
@@ -216,43 +241,42 @@ NSString *const EOSOverwrite = @"EOSOverwrite";
             
             //update options to include savedFilename
             NSMutableDictionary* newOptionsM = [NSMutableDictionary dictionaryWithDictionary:options];
-            [newOptionsM setObject:saveAsFilename forKey:EOSSavedFilename];
+            [newOptionsM setObject:saveAsFilename forKey:EOSSavedFilenameKey];
             newOptions = [NSDictionary dictionaryWithDictionary:newOptionsM];
             
             //full download URL
             NSURL* downloadURL = [NSURL URLWithString:saveAsFilename relativeToURL:downloadDirectoryURL];
             
             //disposition (overwrite or not)
-            EdsFileCreateDisposition disposition = [[options objectForKey:EOSOverwrite] boolValue] == YES ? kEdsFileCreateDisposition_CreateAlways : kEdsFileCreateDisposition_CreateNew;
-            
+            EdsFileCreateDisposition disposition = [[options objectForKey:EOSOverwriteKey] boolValue] == YES ? kEdsFileCreateDisposition_CreateAlways : kEdsFileCreateDisposition_CreateNew;
             
             
             //create file stream
             errorCode = EdsCreateFileStreamEx((__bridge CFURLRef)downloadURL, disposition, kEdsAccess_Write, &stream);
             
         }
+
         
-        
-//        if (errorCode == EOSError_OK){
-//            
-//            //setup progress update if necessary
-//            if (delegateRespondsToProgress){
-//                
-//                //delegate followed by arguments for didReceiveDownloadProgress:forFile:withOptions:contextInfo: (except progress)
-//                NSArray* callbackParams = [NSArray arrayWithObjects:
-//                                           delegate,
-//                                           self,
-//                                           newOptions,
-//                                           contextInfo,
-//                                           nil];
-//                
-//
-//                
-//                errorCode = EdsSetProgressCallback(stream, downloadProgressCallback, kEdsProgressOption_Periodically, (__bridge EdsVoid *)(callbackParams));
-//                
-//            }
-//            
-//        }
+        if (errorCode == EOSError_OK){
+            
+            //setup progress update if necessary
+            if (delegateRespondsToProgress){
+                
+                //delegate followed by arguments for didReceiveDownloadProgress:forFile:withOptions:contextInfo: (except progress)
+                NSArray* callbackParams = [NSArray arrayWithObjects:
+                                           delegate,
+                                           self,
+                                           newOptions,
+                                           contextInfo,
+                                           nil];
+                
+
+                
+                errorCode = EdsSetProgressCallback(stream, downloadProgressCallback, kEdsProgressOption_Periodically, (__bridge EdsVoid *)(callbackParams));
+                
+            }
+            
+        }
         
         
         if (errorCode == EOSError_OK){
@@ -290,16 +314,17 @@ NSString *const EOSOverwrite = @"EOSOverwrite";
         [inv setTarget:delegate];
         [inv setSelector:didDownloadSelector];
         
-        [inv setArgument:(__bridge void *)(self) atIndex:2]; //file
+        EOSFile* file = self;
+        [inv setArgument:&file atIndex:2]; //file
         [inv setArgument:&newOptions atIndex:3]; //options
-        if (contextInfo)
-            [inv setArgument:(__bridge void *)(contextInfo) atIndex:4]; //contextInfo
+
+        id context = contextInfo;
+        [inv setArgument:&context atIndex:4]; //contextInfo
+        
         [inv setArgument:&error atIndex:5]; //error
         
         //perform method on main thread
         [inv performSelectorOnMainThread:@selector(invoke) withObject:nil waitUntilDone:YES];
-        
-        
         
         
     });
@@ -307,123 +332,122 @@ NSString *const EOSOverwrite = @"EOSOverwrite";
 }
 
 
-//-(void)readDataWithDelegate:(id)delegate contextInfo:(id)contextInfo{
-//    
-//    SEL didReceiveProgressSelector = @selector(didReceiveReadProgress:forFile:contextInfo:);
-//    BOOL delegateRespondsToProgress = [delegate respondsToSelector:didReceiveProgressSelector];
-//    
-//    //download in background thread
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-//        
-//        NSData* data;
-//        EdsStreamRef stream = NULL;
-//        void* ptr = NULL;
-//        
-//        NSUInteger size = 0;
-//        EOSError errorCode = EOSError_OK;
-//        NSError* error;
-//        
-//        //get info
-//        EOSFileInfo* info = [self getInfo:&error];
-//        if (info == nil)
-//            errorCode = [error code];
-//        
-//        
-//        
-//        if (error == EOSError_OK){
-//            
-//            //get size
-//            size = [info size];
-//            
-//            
-//            //create memory stream
-//            errorCode = EdsCreateMemoryStream((int)size, &stream);
-//            
-//        }
-//        
-////        if (errorCode == EOSError_OK){
-////            
-////            //setup progress update if necessary
-////            if (delegateRespondsToProgress){
-////                
-////                NSArray* callbackParams = [NSArray arrayWithObjects:
-////                                           self,
-////                                           contextInfo,
-////                                           nil];
-////                
-////                NSArray* callbackContext = [NSArray arrayWithObjects:
-////                                            delegate,
-////                                            NSStringFromSelector(didReceiveProgressSelector),
-////                                            callbackParams,
-////                                            nil];
-////                
-////                error = EdsSetProgressCallback(stream, downloadProgressCallback, kEdsProgressOption_Periodically, (__bridge EdsVoid *)(callbackContext));
-////                
-////            }
-////            
-////        }
-//        
-//        if (errorCode == EOSError_OK){
-//            
-//            //start download
-//            errorCode = EdsDownload(_baseRef, (int)size, stream);
-//            
-//        }
-//        
-//        if (errorCode == EOSError_OK){
-//            
-//            //complete download
-//            errorCode = EdsDownloadComplete(_baseRef);
-//            
-//        }
-//        
-//        if (errorCode == EOSError_OK){
-//            
-//            //get stream pointer
-//            errorCode = EdsGetPointer(stream, &ptr);
-//            
-//        }
-//        
-//        if (errorCode == EOSError_OK){
-//            
-//            //init NSData
-//            data = [NSData dataWithBytes:ptr length:size];
-//            
-//        }
-//        
-//        if (stream != NULL){
-//            
-//            EdsRelease(stream);
-//            stream = NULL;
-//            
-//        }
-//        
-//        error = EOSCreateError(errorCode);
-//        
-//        //prepare didReadData:forFile:contextInfo:error:
-//        SEL didReadSelector = @selector(didReadData:forFile:contextInfo:error:);
-//        
-//        NSInvocation* inv = [NSInvocation invocationWithMethodSignature:[delegate methodSignatureForSelector:didReadSelector]];
-//        
-//        [inv setTarget:delegate];
-//        [inv setSelector:didReadSelector];
-//        
-//        [inv setArgument:&data atIndex:2];
-//        [inv setArgument:(__bridge void *)(self) atIndex:3];
-//        [inv setArgument:(__bridge void *)(contextInfo) atIndex:4];
-//        [inv setArgument:&error atIndex:5];
-//        
-//            
-//        //perform on main thread
-//        dispatch_async(dispatch_get_main_queue(), ^(void){
-//                
-//            [inv invoke];
-//                
-//        });
-//        
-//    });
-//    
-//}
+-(void)readDataWithDelegate:(id)delegate contextInfo:(id)contextInfo{
+
+    SEL didReceiveProgressSelector = @selector(didReceiveReadProgress:forFile:contextInfo:);
+    BOOL delegateRespondsToProgress = [delegate respondsToSelector:didReceiveProgressSelector];
+    
+    //download in background thread
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+
+        NSData* data;
+        EdsStreamRef stream = NULL;
+        void* ptr = NULL;
+
+        NSUInteger size = 0;
+        EOSError errorCode = EOSError_OK;
+        NSError* error;
+
+        //get info
+        EOSFileInfo* info = [self info:&error];
+        if (info == nil)
+            errorCode = [error code];
+
+        
+        
+        if (errorCode == EOSError_OK){
+            
+            //get size
+            size = [info size];
+            
+            
+            //create memory stream
+            errorCode = EdsCreateMemoryStream((EdsUInt32)size, &stream);
+            
+        }
+
+        if (errorCode == EOSError_OK){
+            
+            //setup progress update if necessary
+            if (delegateRespondsToProgress){
+                
+                NSArray* callbackParams = [NSArray arrayWithObjects:
+                                           delegate,
+                                           self,
+                                           contextInfo,
+                                           nil];
+                
+
+                
+                errorCode = EdsSetProgressCallback(stream, readProgressCallback, kEdsProgressOption_Periodically, (__bridge EdsVoid *)(callbackParams));
+                
+            }
+            
+        }
+
+        if (errorCode == EOSError_OK){
+            
+            //start download
+            errorCode = EdsDownload(_baseRef, (EdsUInt32)size, stream);
+            
+        }
+
+        if (errorCode == EOSError_OK){
+            
+            //complete download
+            errorCode = EdsDownloadComplete(_baseRef);
+            
+        }
+
+        if (errorCode == EOSError_OK){
+            
+            //get stream pointer
+            errorCode = EdsGetPointer(stream, &ptr);
+            
+        }
+
+        if (errorCode == EOSError_OK){
+            
+            data = [NSData dataWithBytes:ptr length:size];
+            
+            EdsRelease(ptr);
+            ptr = NULL;
+            
+        }
+
+        if (stream != NULL){
+            
+            EdsRelease(stream);
+            stream = NULL;
+            
+        }
+
+        error = EOSCreateError(errorCode);
+
+        //prepare didReadData:forFile:contextInfo:error:
+        SEL didReadSelector = @selector(didReadData:forFile:contextInfo:error:);
+
+        NSInvocation* inv = [NSInvocation invocationWithMethodSignature:[delegate methodSignatureForSelector:didReadSelector]];
+
+        [inv setTarget:delegate];
+        [inv setSelector:didReadSelector];
+
+        [inv setArgument:&data atIndex:2]; //data
+        
+        EOSFile* file = self;
+        [inv setArgument:&file atIndex:3]; //file
+        
+        id context = contextInfo;
+        [inv setArgument:&context atIndex:4]; //contextInfo
+        
+        [inv setArgument:&error atIndex:5];
+
+        [inv performSelectorOnMainThread:@selector(invoke) withObject:nil waitUntilDone:YES];
+
+        
+    });
+
+}
 
 
 
