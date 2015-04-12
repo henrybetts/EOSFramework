@@ -96,7 +96,7 @@ EdsError EDSCALLBACK EOSManagerCameraAddedHandler(EdsVoid* inContext){
         return NO;
         
     }
-    
+
     _isLoaded = YES;
     return YES;
     

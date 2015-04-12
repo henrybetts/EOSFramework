@@ -22,7 +22,7 @@
     EOSError errorCode = EdsGetPropertySize(_baseRef, property, (EdsUInt32)parameter, dataType, &intSize);
     
     *size = intSize;
-    
+
     if (errorCode != EOSError_OK){
         
         if (error)

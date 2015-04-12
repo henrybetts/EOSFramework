@@ -21,7 +21,7 @@ EOSImageQuality EOSImageQualityFromCode(NSUInteger imageQualityCode){
     imageQuality.secondaryCompressionQuality = imageQualityCode & 15;
     
     return imageQuality;
-    
+
 }
 
 @implementation EOSImage
