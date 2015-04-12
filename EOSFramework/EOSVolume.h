@@ -14,7 +14,7 @@
 /*!
  @brief Storage types
  */
-typedef NS_OPTIONS(NSUInteger, EOSStorageType){
+typedef NS_ENUM(NSUInteger, EOSStorageType){
     
     EOSStorageType_None = kEdsStorageType_Non,
     EOSStorageType_CF   = kEdsStorageType_CF,
@@ -26,7 +26,7 @@ typedef NS_OPTIONS(NSUInteger, EOSStorageType){
 /*!
  @brief Access types
  */
-typedef NS_OPTIONS(NSUInteger, EOSAccess){
+typedef NS_ENUM(NSUInteger, EOSAccess){
     
     EOSAccess_Read      = kEdsAccess_Read,
     EOSAccess_Write     = kEdsAccess_Write,
