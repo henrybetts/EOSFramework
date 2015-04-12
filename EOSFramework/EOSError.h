@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, EOSErrorType){
 /*!
  EOSError codes
  */
-typedef NS_OPTIONS(NSUInteger, EOSError){
+typedef NS_ENUM(NSUInteger, EOSError){
     
     /*-----------------------------------------------------------------------
      ED-SDK Functin Success Code
