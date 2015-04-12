@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, EOSCameraCommand){
     
     /** Controls shutter button operations.
       
-     This command should be used with one of the asda parameters. The command is supported by the EOS 50D or EOS 5D Mark II or later cameras.
+     This command should be used with one of the EOSShutterButtonState parameters. The command is supported by the EOS 50D or EOS 5D Mark II or later cameras.
      */
     EOSCommand_PressShutterButton   = kEdsCameraCommand_PressShutterButton,
     
