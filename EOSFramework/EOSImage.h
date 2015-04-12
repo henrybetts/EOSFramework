@@ -8,7 +8,7 @@
 
 #import <EOSFramework/EOSPropertyObject.h>
 
-typedef NS_OPTIONS(NSUInteger, EOSImageSize){
+typedef NS_ENUM(NSUInteger, EOSImageSize){
     
     EOSImageSize_Large         = kEdsImageSize_Large,
     EOSImageSize_Middle        = kEdsImageSize_Middle,
@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSUInteger, EOSImageSize){
 };
 
 
-typedef NS_OPTIONS(NSUInteger, EOSImageFormat){
+typedef NS_ENUM(NSUInteger, EOSImageFormat){
     
     EOSImageFormat_Unknown    = kEdsImageType_Unknown,
     EOSImageFormat_JPEG       = kEdsImageType_Jpeg,
@@ -35,7 +35,7 @@ typedef NS_OPTIONS(NSUInteger, EOSImageFormat){
 
 
 
-typedef NS_OPTIONS(NSUInteger, EOSCompressionQuality){
+typedef NS_ENUM(NSUInteger, EOSCompressionQuality){
     
     EOSCompressionQuality_Normal     = kEdsCompressQuality_Normal,
     EOSCompressionQuality_Fine       = kEdsCompressQuality_Fine,
@@ -62,6 +62,13 @@ typedef struct _EOSImageQuality {
     
 } EOSImageQuality;
 
+/*!
+ @function EOSImageQualityFromCode
+ @brief Creates an EOSImageQuality struct using the data from an image quality code.
+ @discussion The value for the property EOSProperty_ImageQuality is an unsigned integer, which contains several pieces of information about the quality of the image(s). This function extracts the information using bitmasks and repackages it into an easier to use structure.
+ @param imageQualityCode An image quality code, typically retrieved from a camera.
+ @return An EOSImageQuality struct.
+ */
 FOUNDATION_EXPORT EOSImageQuality EOSImageQualityFromCode(NSUInteger imageQualityCode);
 
 
