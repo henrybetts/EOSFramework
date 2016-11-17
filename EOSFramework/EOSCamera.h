@@ -95,10 +95,9 @@ typedef NS_ENUM(NSInteger, EOSShutterButtonState){
 
 /*!
  @brief A description of the camera.
- @discussion This is typically the camera's model name.
+ @discussion This is typically the camera's model name. This property is the equivalent of calling description.
  */
-@property (readonly) NSString* description;
-
+@property (readonly) NSString* cameraDescription;
 
 
 ///---------------------

@@ -75,7 +75,7 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
         
         if (EdsGetDeviceInfo(_baseRef, &deviceInfo) == EOSError_OK){
             
-            _description = [NSString stringWithUTF8String:deviceInfo.szDeviceDescription];
+            _cameraDescription = [NSString stringWithUTF8String:deviceInfo.szDeviceDescription];
             _port = [NSString stringWithUTF8String:deviceInfo.szPortName];
             
         }
@@ -87,6 +87,10 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
     
     return self;
     
+}
+
+-(NSString*)description{
+    return [self cameraDescription];
 }
 
 -(id)delegate{
