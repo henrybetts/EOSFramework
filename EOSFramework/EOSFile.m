@@ -449,6 +449,21 @@ EDSCALLBACK EdsError readProgressCallback(EdsUInt32 inPercent, EdsVoid* inContex
 
 }
 
+-(BOOL)cancelTransfer:(NSError* __autoreleasing*)error{
+    
+    EOSError errorCode = EdsDownloadCancel(_baseRef);
+    
+    if (errorCode != EOSError_OK){
+        
+        if (error)
+            *error = EOSCreateError(errorCode);
+        return NO;
+        
+    }
+    
+    return YES;
+    
+}
 
 
 

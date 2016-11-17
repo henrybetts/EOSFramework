@@ -298,6 +298,11 @@ typedef NS_ENUM(NSInteger, EOSShutterButtonState){
 -(void)camera:(EOSCamera*)camera didFormatVolume:(EOSVolume*)volume;
 
 /*!
+ Untested
+ */
+-(void)camera:(EOSCamera*)camera didRequestTransferOfFile:(EOSFile*)file;
+
+/*!
  @brief Invoked when a camera is soon going to shutdown.
  @discussion The time at which the camera issues the notification is model dependent, which is why the delay parameter is provided. To cancel the shutdown, send the EOSCameraCommand_ExtendShutdownTimer command to the camera.
  @param camera The camera that is going to shutdown.

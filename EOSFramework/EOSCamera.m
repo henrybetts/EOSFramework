@@ -55,6 +55,10 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
     
     else if (inEvent == kEdsObjectEvent_VolumeUpdateItems)
         [[camera delegate] camera:camera didFormatVolume:[[EOSVolume alloc] initWithVolumeRef:inRef]];
+    else if (inEvent == kEdsObjectEvent_DirItemRequestTransfer)
+        [[camera delegate] camera:camera didRequestTransferOfFile: [[EOSFile alloc] initWithDirectoryItemRef:inRef]];
+    else if (inRef)
+        EdsRelease(inRef);
     
     return EDS_ERR_OK;
     
@@ -160,6 +164,12 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
             EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_VolumeUpdateItems, EOSCameraObjectEventHandler, (__bridge EdsVoid *)(self));
             
         }
+        
+        if ([delegate respondsToSelector:@selector(camera:didRequestTransferOfFile:)]){
+            
+            EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_DirItemRequestTransfer, EOSCameraObjectEventHandler, (__bridge EdsVoid *)(self));
+            
+        }
 
         
     }else{
@@ -174,6 +184,7 @@ EdsError EDSCALLBACK EOSCameraObjectEventHandler(EdsObjectEvent inEvent, EdsBase
         EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_DirItemCreated, NULL, NULL);
         EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_DirItemRemoved, NULL, NULL);
         EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_VolumeInfoChanged, NULL, NULL);
+        EdsSetObjectEventHandler(_baseRef, kEdsObjectEvent_DirItemRequestTransfer, NULL, NULL);
         
     }
     

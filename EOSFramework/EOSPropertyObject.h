@@ -48,7 +48,9 @@ typedef NS_ENUM(NSUInteger, EOSProperty){
     
     /** */
     EOSProperty_Cfn                     = kEdsPropID_CFn,
-    EOSProperty_SaveTo                  = kEdsPropID_SaveTo,
+    
+    /** The destination of images after shooting, represented by an EOSCaptureDestination value */
+    EOSProperty_CaptureDestination      = kEdsPropID_SaveTo,
     
     /** A string representing the name of the current storage media */
     EOSProperty_CurrentStorage          = kEdsPropID_CurrentStorage,
@@ -530,6 +532,14 @@ typedef NS_ENUM(NSUInteger, EOSAFMode){
     EOSAFMode_AIFocus = 2,
     EOSAFMode_Manual = 3,
     EOSAFMode_Unknown = 0xffffffff
+    
+};
+
+typedef NS_ENUM(NSUInteger, EOSCaptureDestination){
+    
+    EOSCaptureDestination_Camera = kEdsSaveTo_Camera,
+    EOSCaptureDestination_Host = kEdsSaveTo_Host,
+    EOSCaptureDestination_Both = kEdsSaveTo_Both
     
 };
 

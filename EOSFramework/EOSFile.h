@@ -249,6 +249,10 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
 */
 -(void)readDataWithDelegate:(id<EOSReadDataDelegate>)delegate contextInfo:(id)contextInfo;
 
+/**
+ Untested!
+ */
+-(BOOL)cancelTransfer:(NSError* __autoreleasing*)error;
 
 
 ///---------------
