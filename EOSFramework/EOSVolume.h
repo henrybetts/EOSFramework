@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <EOSFramework/EOSObject.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class EOSFile;
 
 /*!
@@ -134,7 +136,7 @@ typedef NS_ENUM(NSUInteger, EOSAccess){
  @param error If unsuccessful, an instance of NSError will describe the problem.
  @return If successful, a EOSVolumeInfo object, otherwise nil.
  */
--(EOSVolumeInfo*)info:(NSError* __autoreleasing*)error;
+-(nullable EOSVolumeInfo*)info:(NSError* __autoreleasing*)error;
 
 
 
@@ -147,7 +149,7 @@ typedef NS_ENUM(NSUInteger, EOSAccess){
  @param error If unsuccessful, an instance of NSError describes the problem.
  @return If successful, the number of files, otherwise nil.
  */
--(NSNumber*)fileCount:(NSError* __autoreleasing*)error;
+-(nullable NSNumber*)fileCount:(NSError* __autoreleasing*)error;
 
 /*!
  @brief Gets the file that is in the root directory at the specified index.
@@ -156,14 +158,14 @@ typedef NS_ENUM(NSUInteger, EOSAccess){
  @param error If unsuccessful, an instance of NSError describes the problem.
  @return If successful, an EOSFile object representing the file, otherwise nil.
  */
--(EOSFile*)fileAtIndex:(NSUInteger)index error:(NSError* __autoreleasing *)error;
+-(nullable EOSFile*)fileAtIndex:(NSUInteger)index error:(NSError* __autoreleasing *)error;
 
 /*!
  @brief Gets all of the files that are in the root directory.
  @discussion If there is an error retrieving a file, the function will continue without adding it to the array. If you need to check for errors when reteiving each file, use fileAtIndex:error: instead.
  @return An array containing instances of EOSFile.
  */
--(NSArray*)files;
+-(NSArray<EOSFile*>*)files;
 
 
 ///----------------------------
@@ -178,3 +180,5 @@ typedef NS_ENUM(NSUInteger, EOSAccess){
 -(BOOL)format:(NSError* __autoreleasing*)error;
 
 @end
+
+NS_ASSUME_NONNULL_END

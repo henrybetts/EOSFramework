@@ -8,6 +8,8 @@
 
 #import <EOSFramework/EOSPropertyObject.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class EOSVolume;
 @class EOSFile;
 
@@ -149,7 +151,7 @@ typedef NS_ENUM(NSInteger, EOSShutterButtonState){
  @param error If unsuccessful, an instance of NSError describes the problem.
  @return If successful, the number of volumes, otherwise nil.
  */
--(NSNumber*)volumeCount:(NSError* __autoreleasing*)error;
+-(nullable NSNumber*)volumeCount:(NSError* __autoreleasing*)error;
 
 /*!
  @brief Gets the volume at the specified index.
@@ -158,14 +160,14 @@ typedef NS_ENUM(NSInteger, EOSShutterButtonState){
  @param error If unsuccessful, an instance of NSError describes the problem.
  @return If successful, an EOSVolume object representing the volume, otherwise nil.
  */
--(EOSVolume*)volumeAtIndex:(NSUInteger)index error:(NSError* __autoreleasing *)error;
+-(nullable EOSVolume*)volumeAtIndex:(NSUInteger)index error:(NSError* __autoreleasing *)error;
 
 /*!
  @brief Gets all of the volumes that are mounted on the camera.
  @discussion If there is an error retrieving a volume, the function will continue without adding it to the array. If you need to check for errors when reteiving each volume, use volumeAtIndex:error: instead.
  @return An array containing instances of EOSVolume.
  */
--(NSArray*)volumes;
+-(NSArray<EOSVolume*>*)volumes;
 
 
 
@@ -180,7 +182,7 @@ typedef NS_ENUM(NSInteger, EOSShutterButtonState){
  @param error If unsuccessful, an instance of NSError describes the problem.
  @return If successful an array containing the supported values as NSNumbers, otherwise nil.
  */
--(NSArray*)supportedValuesForProperty:(EOSProperty)property error:(NSError* __autoreleasing*)error;
+-(nullable NSArray<NSNumber*>*)supportedValuesForProperty:(EOSProperty)property error:(NSError* __autoreleasing*)error;
 
 
 
@@ -217,14 +219,14 @@ typedef NS_ENUM(NSInteger, EOSShutterButtonState){
  @see EOSCameraDelegate
  */
 
--(id<EOSCameraDelegate>)delegate;
+-(nullable id<EOSCameraDelegate>)delegate;
 
 /*!
  @brief Sets the camera's delegate to a given object or removes an existing delegate.
  @param delegate The delegate for the camera. Pass nil to remove an existing delegate.
  @see EOSCameraDelegate
  */
--(void)setDelegate:(id<EOSCameraDelegate>)delegate;
+-(void)setDelegate:(nullable id<EOSCameraDelegate>)delegate;
 
 
 /**
@@ -317,3 +319,5 @@ typedef NS_ENUM(NSInteger, EOSShutterButtonState){
 -(void)cameraDidDisconnect:(EOSCamera*)camera;
 
 @end
+
+NS_ASSUME_NONNULL_END

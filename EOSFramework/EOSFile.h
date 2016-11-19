@@ -10,6 +10,7 @@
 #import <EOSFramework/EOSObject.h>
 #import <EOSFramework/EOSImage.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @brief File attributes
@@ -174,7 +175,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param error If unsuccessful, an instance of NSError will describe the problem.
  @return if successful, an EOSFileInfo object, otherwise nil
  */
--(EOSFileInfo*)info:(NSError* __autoreleasing*)error;
+-(nullable EOSFileInfo*)info:(NSError* __autoreleasing*)error;
 
 
 
@@ -208,7 +209,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param error If unsuccessful, an instance of NSError describes the problem.
  @return If successful, the number of children, otherwise nil.
  */
--(NSNumber*)fileCount:(NSError* __autoreleasing*)error;
+-(nullable NSNumber*)fileCount:(NSError* __autoreleasing*)error;
 
 /*!
  @brief Gets the file that is directly contained within a directory at the specified index.
@@ -217,14 +218,14 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param error If unsuccessful, an instance of NSError describes the problem
  @return If successful, an EOSFile object representing the file, otherwise nil
  */
--(EOSFile*)fileAtIndex:(NSUInteger)index error:(NSError* __autoreleasing *)error;
+-(nullable EOSFile*)fileAtIndex:(NSUInteger)index error:(NSError* __autoreleasing *)error;
 
 /**
  @brief Gets all of the files that are directly contained within a directory.
  @discussion If there is an error retrieving a child, the function will continue without adding it to the array. If you need to check for errors when reteiving each file, use fileAtIndex:error: instead.
  @return an array containing instances of EOSFile.
  */
--(NSArray*)files;
+-(NSArray<EOSFile*>*)files;
 
 
 
@@ -239,7 +240,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param delegate The download delegate.
  @param contextInfo An object that will be passed to the delegate methods. Can be nil.
  */
--(void)downloadWithOptions:(NSDictionary*)options delegate:(id<EOSDownloadDelegate>)delegate contextInfo:(id)contextInfo;
+-(void)downloadWithOptions:(NSDictionary*)options delegate:(id<EOSDownloadDelegate>)delegate contextInfo:(nullable id)contextInfo;
 
 /**
  @brief Reads the data from the file asynchronously.
@@ -247,7 +248,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param delegate The read data delegate.
  @param contextInfo An object that will be passed to the delegate methods. Can be nil.
 */
--(void)readDataWithDelegate:(id<EOSReadDataDelegate>)delegate contextInfo:(id)contextInfo;
+-(void)readDataWithDelegate:(id<EOSReadDataDelegate>)delegate contextInfo:(nullable id)contextInfo;
 
 /**
  Untested!
@@ -286,7 +287,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param contextInfo The object that was passed to the download method.
  @param error If unsuccessful, an instance of NSError describes the problem.
  */
--(void)didDownloadFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(id)contextInfo error:(NSError*)error;
+-(void)didDownloadFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(nullable id)contextInfo error:(nullable NSError*)error;
 
 @optional
 
@@ -298,7 +299,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param options The dictionary of download options.
  @param contextInfo The object that was passed to the download method.
  */
--(void)didReceiveDownloadProgress:(NSUInteger)progress forFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(id)contextInfo;
+-(void)didReceiveDownloadProgress:(NSUInteger)progress forFile:(EOSFile*)file withOptions:(NSDictionary*)options contextInfo:(nullable id)contextInfo;
 
 
 @end
@@ -319,7 +320,7 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param contextInfo The object that was passed to the readData method.
  @param error If unsuccessful, an instance of NSError describes the problem.
  */
--(void)didReadData:(NSData*)data forFile:(EOSFile*)file contextInfo:(id)contextInfo error:(NSError*)error;
+-(void)didReadData:(nullable NSData*)data forFile:(EOSFile*)file contextInfo:(nullable id)contextInfo error:(nullable NSError*)error;
 
 @optional
 
@@ -329,6 +330,8 @@ FOUNDATION_EXPORT NSString *const EOSOverwriteKey;
  @param file The file that is being read.
  @param contextInfo The object that was passed to the readData method.
  */
--(void)didReceiveReadProgress:(NSUInteger)progress forFile:(EOSFile*)file contextInfo:(id)contextInfo;
+-(void)didReceiveReadProgress:(NSUInteger)progress forFile:(EOSFile*)file contextInfo:(nullable id)contextInfo;
 
 @end
+
+NS_ASSUME_NONNULL_END

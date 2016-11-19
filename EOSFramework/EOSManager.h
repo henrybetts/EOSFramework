@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class EOSCamera;
 
 @protocol EOSManagerDelegate;
@@ -72,14 +74,14 @@
  @param delegate The delegate for the manager. Pass nil to remove an existing delegate.
  @see EOSManagerDelegate
  */
--(void)setDelegate:(id<EOSManagerDelegate>)delegate;
+-(void)setDelegate:(nullable id<EOSManagerDelegate>)delegate;
 
 /*!
  @brief Returns the manager's delegate.
  @return The manager's delegate, or nil if it doesn’t have a delegate.
  @see EOSManagerDelegate
  */
--(id<EOSManagerDelegate>)delegate;
+-(nullable id<EOSManagerDelegate>)delegate;
 
 
 
@@ -92,7 +94,7 @@
  @discussion EOSManager ensures that there is never more than one instance of EOSCamera reprenting each device. Therefore this method will return the same EOSCamera instance for any camera that has already been retrieved.
  @return An array containing instances of EOSCamera.
  */
--(NSArray*)getCameras;
+-(NSArray<EOSCamera*>*)getCameras;
 
 
 
@@ -138,3 +140,5 @@
 -(void)cameraDidConnect;
 
 @end
+
+NS_ASSUME_NONNULL_END

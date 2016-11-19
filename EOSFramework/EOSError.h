@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <EDSDK/EDSDKErrors.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @brief The domain of all EOS related errors.
@@ -222,4 +223,6 @@ FOUNDATION_EXPORT EOSErrorType EOSErrorTypeFromCode(EOSError errorCode);
  @param errorCode An EOSError code.
  @return the NSError object.
  */
-FOUNDATION_EXPORT NSError* EOSCreateError(EOSError errorCode);
+FOUNDATION_EXPORT NSError* _Nullable EOSCreateError(EOSError errorCode);
+
+NS_ASSUME_NONNULL_END

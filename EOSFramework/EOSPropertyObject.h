@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <EOSFramework/EOSObject.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  Properties of cameras and images to be used with the methods of EOSPropertyObject.
  */
@@ -561,7 +563,7 @@ typedef NS_ENUM(NSUInteger, EOSCaptureDestination){
  @param error If unsuccessful, an instance of NSError will describe the problem.
  @return A numeric value if successful, otherwise nil.
  */
--(NSNumber*)numberValueForProperty:(EOSProperty)property withParameter:(NSUInteger)parameter error:(NSError* __autoreleasing*)error;
+-(nullable NSNumber*)numberValueForProperty:(EOSProperty)property withParameter:(NSUInteger)parameter error:(NSError* __autoreleasing*)error;
 
 /*!
  @brief Gets the numeric value of a property.
@@ -569,7 +571,7 @@ typedef NS_ENUM(NSUInteger, EOSCaptureDestination){
  @param error If unsuccessful, an instance of NSError will describe the problem.
  @return A numeric value if successful, otherwise nil.
  */
--(NSNumber*)numberValueForProperty:(EOSProperty)property error:(NSError* __autoreleasing*)error;
+-(nullable NSNumber*)numberValueForProperty:(EOSProperty)property error:(NSError* __autoreleasing*)error;
 
 
 /*!
@@ -579,7 +581,7 @@ typedef NS_ENUM(NSUInteger, EOSCaptureDestination){
  @param error If unsuccessful, an instance of NSError will describe the problem.
  @return A string value if successful, otherwise nil.
  */
--(NSString*)stringValueForProperty:(EOSProperty)property withParameter:(NSUInteger)parameter error:(NSError* __autoreleasing*)error;
+-(nullable NSString*)stringValueForProperty:(EOSProperty)property withParameter:(NSUInteger)parameter error:(NSError* __autoreleasing*)error;
 
 
 /*!
@@ -588,7 +590,7 @@ typedef NS_ENUM(NSUInteger, EOSCaptureDestination){
  @param error If unsuccessful, an instance of NSError will describe the problem.
  @return A string value if successful, otherwise nil.
  */
--(NSString*)stringValueForProperty:(EOSProperty)property error:(NSError* __autoreleasing*)error;
+-(nullable NSString*)stringValueForProperty:(EOSProperty)property error:(NSError* __autoreleasing*)error;
 
 
 
@@ -680,3 +682,5 @@ typedef NS_ENUM(NSUInteger, EOSCaptureDestination){
 -(BOOL)setValue:(const void*)value ofSize:(NSUInteger)size forProperty:(EOSProperty)property withParameter:(NSUInteger)parameter error:(NSError* __autoreleasing*)error;
 
 @end
+
+NS_ASSUME_NONNULL_END
